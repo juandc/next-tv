@@ -1,0 +1,31 @@
+{
+  "name": "next-tv",
+  "version": "0.0.1",
+  "description": "Next TV repository",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "server": "node server",
+    "build": "node",
+    "dev": "nodemon server",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juandc/next-tv.git"
+  },
+  "keywords": [
+    "juandc",
+    "react",
+    "isomorphic",
+    "app",
+    "tvify",
+    "tvmaze"
+  ],
+  "author": "Juan David Castro <juandavidcastrogallego@gmail.com> (http://juandc.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juandc/next-tv/issues"
+  },
+  "homepage": "https://github.com/juandc/next-tv#readme"
+}

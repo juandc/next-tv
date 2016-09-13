@@ -1,30 +1,3 @@
-# Next TV
-
-#### **Crea una app que consuma un API REST cualquiera abierto en la web:**
-Por ejemplo: Facebook, last.fm, instagram, github, marvel, etc.
-
-***Requisitos:***
-
- - Conectarse a un API Rest (cualquiera)
- - Usar React.js con Redux
- -  Hacer server-render de la aplicación
- - CSS con Stylus
- - Responsive design con Mobile First
- - CSS Components para nombrar las clases
- - Webpack
- - ECMAScript 6 con Babel
- - Seguir la guía de estilo de JS de AirBnB (https://github.com/airbnb/javascript/)
- - Configurar ESLint con la guía de estilos de AirBnB (que webpack corrar el linter antes de transpilar)
- - FlexboxGrid si necesita grillas (ni bootstrap ni foundation)
- - Internacionalización inglés + español
- - Subirla a Github y que le haga deploy para verla funcionando (puede usar Heroku o Zeit.co ya que va a necesitar un servidor para el server render)
- - Puntos extras si maneja múltiples rutas con React Router o Page.js
- - Puntos extras si es un juego
-
-----------
-
-##License
-
 MIT License
 
 Copyright (c) 2016 Juan David Castro
