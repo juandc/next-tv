@@ -5,19 +5,21 @@ const ReactDOM = require('react-dom')
 
 const Template = React.createClass({
   render () {
+    let title = 'Next TV - ' + this.props.title
     return (
       <html>
         <head>
           <meta charSet="UTF-8"/>
           <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-          <title>Next TV - { this.props.title }</title>
+          <title>{ title }</title>
         </head>
         <body>
-          <h2>Hello Next TV!</h2>
+          <div id="content"></div>
+          <script src="src/app.js"></script>
         </body>
       </html>
     )
   }
 })
 
-export default Template
+module.exports = Template
