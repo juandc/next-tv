@@ -1,20 +1,7 @@
-'use strict'
+require('../styles/main.styl')
 
-// require('./styles/main.styl')
-
-var React = require('react')
-var ReactDOM, { render } = require('react-dom')
-var Movie = require('./components/movie.jsx')
-
-var Template = React.createClass({
-  render: function () {
-    return (
-      <div>
-        <h2>Hello, {this.props.name}</h2>
-        <Movie />
-      </div>
-    )
-  }
-})
+import React, { Component } from 'react'
+import ReactDOM, { render } from 'react-dom'
+import Template from './template.jsx'
 
 render(<Template />, document.getElementById('content'))

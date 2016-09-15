@@ -1,0 +1,78 @@
+@import '../node_modules/nib/lib/nib/index.styl'
+
+*
+  box-sizing border-box
+  transition all .1s linear
+
+html
+body
+  // background-color #EC644B #D24D57
+  background-color #ffffff
+  margin 0
+  padding 0
+  overflow-x hidden
+  min-height 100vh
+
+body
+  display flex
+  flex-direction column
+  flex-wrap wrap
+  position relative
+  height auto
+  justify-content center
+
+.container
+  // border 1px solid #000
+  border-radius 2px
+  display flex
+  flex 1
+  flex-direction column
+  flex-wrap wrap
+  justify-content center
+  margin 0 auto
+  max-width 650px
+  position relative
+  height auto
+  width 90%
+  &.content
+    margin-top 100px
+  &:before
+  &:after
+    content ''
+    display table
+
+.Movies
+  display flex
+  flex-wrap wrap
+  list-style none
+  margin 0 auto
+  padding 0
+  position relative
+  // width 90%
+
+.Movie
+  position relative
+  margin 10px 12px
+  width calc(50% - 24px)
+  width -webkit-calc(50% - 24px)
+  width -moz-calc(50% - 24px)
+  .Movie-avatar
+    margin 0
+    padding 0
+    width 100%
+    &:hover
+      img
+        zoom 200%
+    img
+      width 100%
+
+.u-movieModal
+  display none
+
+@media screen and (min-width: 1024px)
+  .container
+    max-width 900px
+
+@media screen and (min-width: 1440px)
+  .container
+    max-width 1200px

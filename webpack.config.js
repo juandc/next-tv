@@ -1,25 +1,15 @@
-var getConfig = require('hjs-webpack')
-
-// module.exports = getConfig({
-//   // in: 'src/app.jsx',
-//   // out: 'public/src/app.js',
-//   // clearBeforeBuild: true,
-//   module: {
-//     loaders: [
-//       {
-//         test: /\.jsx/,
-//         exclude: /(node_modules|bower_components)/,
-//         loader: 'babel'
-//       }
-//     ]
-//   },
-// })
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
+var path = require("path")
 
 var config = {
-  entry: './src/app.jsx',
+  // context: path.resolve(__dirname, 'src/'),
+  entry: {
+    // styles: './styles/main.styl',
+    src: './src/app.jsx',
+  },
   output: {
     path: 'public/src/',
-    filename: 'app.js'
+    filename: 'app.js',
   },
   module: {
     loaders: [
@@ -27,9 +17,23 @@ var config = {
         test: /\.jsx?/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel'
-      }
-    ]
+      },
+      {
+        test: /\.styl$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'style-loader!css-loader!stylus-loader'
+      },
+    ],
+    resolve: {
+      modulesDirectories: ['node-modules', 'src'],
+      extensions: ['', '.jsx', '.styl']
+    },
+    stylus: {
+      use: [require('nib')()],
+      import: ['~nib/lib/index.styl']
+    }
   },
+  plugins: [ new ExtractTextPlugin('[name].css') ]
 }
 
 module.exports = config

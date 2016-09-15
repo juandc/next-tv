@@ -5,7 +5,7 @@ require('node-jsx').install({ harmony: true })
 const express = require('express')
 const reactEngine = require('react-engine')
 const app = express()
-const port = 8888
+const port = 3333
 
 const engine = reactEngine.server.create()
 app.set('views', __dirname + '/views')
@@ -18,6 +18,12 @@ app.set('view', reactEngine.expressView)
 app.get('/', (req, res) => {
   res.render('home', {
     title: 'Home',
+  })
+})
+
+app.get('/full', (req, res) => {
+  res.render('home', {
+    title: 'Full',
   })
 })
 

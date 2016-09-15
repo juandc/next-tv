@@ -12,6 +12,7 @@ const Template = React.createClass({
           <meta charSet="UTF-8"/>
           <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
           <title>{ title }</title>
+          <link rel="shortcut icon" type="image/x-icon" href="https://facebook.github.io/react/img/logo.svg"/>
         </head>
         <body>
           <div id="content"></div>
