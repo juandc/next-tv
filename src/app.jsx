@@ -1,7 +1,7 @@
-require('../styles/main.styl')
+import React from 'react';
+import { render } from 'react-dom';
+import Template from './template.jsx';
 
-import React, { Component } from 'react'
-import ReactDOM, { render } from 'react-dom'
-import Template from './template.jsx'
+require('../styles/main.styl');
 
-render(<Template />, document.getElementById('content'))
+render(<Template />, document.getElementById('content'));

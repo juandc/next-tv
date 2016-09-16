@@ -55,8 +55,6 @@
 	
 	var _reactDom = __webpack_require__(/*! react-dom */ 34);
 	
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-	
 	var _template = __webpack_require__(/*! ./template.jsx */ 172);
 	
 	var _template2 = _interopRequireDefault(_template);
@@ -21964,8 +21962,6 @@
 	  value: true
 	});
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -21980,35 +21976,14 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Template = function (_React$Component) {
-	  _inherits(Template, _React$Component);
-	
-	  function Template() {
-	    _classCallCheck(this, Template);
-	
-	    return _possibleConstructorReturn(this, (Template.__proto__ || Object.getPrototypeOf(Template)).apply(this, arguments));
-	  }
-	
-	  _createClass(Template, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'section',
-	        null,
-	        _react2.default.createElement(_index2.default, null),
-	        _react2.default.createElement(_index4.default, null)
-	      );
-	    }
-	  }]);
-	
-	  return Template;
-	}(_react2.default.Component);
+	function Template() {
+	  return _react2.default.createElement(
+	    'section',
+	    null,
+	    _react2.default.createElement(_index2.default, null),
+	    _react2.default.createElement(_index4.default, null)
+	  );
+	}
 	
 	exports.default = Template;
 
@@ -22025,59 +22000,36 @@
 	  value: true
 	});
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var Menu = function (_React$Component) {
-	  _inherits(Menu, _React$Component);
-	
-	  function Menu() {
-	    _classCallCheck(this, Menu);
-	
-	    return _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
-	  }
-	
-	  _createClass(Menu, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "nav",
-	        { className: "Menu", id: "menu" },
+	function Menu() {
+	  return _react2.default.createElement(
+	    "nav",
+	    { className: "Menu", id: "menu" },
+	    _react2.default.createElement(
+	      "div",
+	      { className: "container" },
+	      _react2.default.createElement(
+	        "figure",
+	        { className: "Menu-logo" },
 	        _react2.default.createElement(
-	          "div",
-	          { className: "container" },
-	          _react2.default.createElement(
-	            "figure",
-	            { className: "Menu-logo" },
-	            _react2.default.createElement(
-	              "h2",
-	              null,
-	              "Next TV"
-	            )
-	          ),
-	          _react2.default.createElement(
-	            "div",
-	            { className: "Menu-icon Menu-icon--search" },
-	            _react2.default.createElement("i", { className: "fa fa-search" })
-	          )
+	          "h2",
+	          null,
+	          "Next TV"
 	        )
-	      );
-	    }
-	  }]);
-	
-	  return Menu;
-	}(_react2.default.Component);
+	      ),
+	      _react2.default.createElement(
+	        "div",
+	        { className: "Menu-icon Menu-icon--search" },
+	        _react2.default.createElement("i", { className: "fa fa-search" })
+	      )
+	    )
+	  );
+	}
 	
 	exports.default = Menu;
 
@@ -22122,7 +22074,7 @@
 	
 	    _this.state = {
 	      movies: [],
-	      search: 'robot',
+	      search: 'jim',
 	      full: 'http://api.tvmaze.com/shows',
 	      url: 'http://api.tvmaze.com/search/shows?q='
 	    };
@@ -22134,8 +22086,8 @@
 	    value: function componentWillMount() {
 	      var _this2 = this;
 	
-	      var api = this.state.search != '' ? '' + this.state.url + this.state.search : this.state.full;
-	      console.log('Api: ' + api + ' \n Url: ' + this.state.url + ' \n Search word is: ' + this.state.search + ' ');
+	      var api = this.state.search !== '' ? '' + this.state.url + this.state.search : this.state.full;
+	      console.log('Api: ' + api + ' \n Url: ' + this.state.url + ' \n Search word is: ' + this.state.search);
 	      fetch(api).then(function (res) {
 	        return res.json();
 	      }).then(function (res) {
@@ -22160,14 +22112,16 @@
 	            _react2.default.createElement(
 	              'figure',
 	              { className: 'ChargingContainer-img' },
-	              _react2.default.createElement('img', { src: 'img/load2.gif' })
+	              _react2.default.createElement('img', { src: 'img/load2.gif', alt: 'Charging films' })
 	            )
 	          ),
-	          setInterval(function () {
+	          setInterval(function chargeContainer() {
 	            if (document.getElementById('chargingContainer')) {
-	              document.getElementById('chargingContainer').innerHTML = '<div class="ChargingContainer">\n              <p class="ChargingContainer-span">Lo sentimos... no hay peliculas</p>\n              <figure class="ChargingContainer-img">\n                <img height="200" src="http://media0.giphy.com/media/l41lGxxaSgnMk7rIA/giphy.gif" />\n              </figure>\n            </div>';
+	              var chargingContainer = document.getElementById('chargingContainer');
+	              chargingContainer.innerHTML = '<div class="ChargingContainer">\n                  <p class="ChargingContainer-span">Lo sentimos... no hay peliculas</p>\n                  <figure class="ChargingContainer-img">\n                    <img height="200" src="http://media0.giphy.com/media/l41lGxxaSgnMk7rIA/giphy.gif" />\n                  </figure>\n                </div>';
 	            }
-	          }, 4000)
+	          }, 4000),
+	          ';'
 	        );
 	      }
 	      return _react2.default.createElement(
@@ -22175,15 +22129,22 @@
 	        { className: 'container' },
 	        _react2.default.createElement(
 	          'div',
-	          { style: {
-	              background: 'lightblue', position: 'absolute',
-	              left: '10%', top: '82px',
-	              width: '80%', height: '70px',
-	              display: 'flex', alignItems: 'center'
-	            } },
+	          {
+	            style: {
+	              background: '#22A7F0',
+	              position: 'absolute',
+	              left: '10%',
+	              top: '82px',
+	              width: '80%',
+	              height: '70px',
+	              display: 'flex',
+	              alignItems: 'center',
+	              padding: '0 10px'
+	            }
+	          },
 	          _react2.default.createElement(
 	            'h4',
-	            { style: { fontFamily: 'Open Sans', color: '#fff', margin: '0 0 0 10px', fontSize: '20px' } },
+	            { style: { fontFamily: 'Open Sans', color: '#fff', fontSize: '20px' } },
 	            'Resultados para:',
 	            _react2.default.createElement(
 	              'span',
@@ -22215,8 +22176,6 @@
 	  value: true
 	});
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -22227,39 +22186,20 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function MovieList(_ref) {
+	  var list = _ref.list;
 	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var MovieList = function (_React$Component) {
-	  _inherits(MovieList, _React$Component);
-	
-	  function MovieList() {
-	    _classCallCheck(this, MovieList);
-	
-	    return _possibleConstructorReturn(this, (MovieList.__proto__ || Object.getPrototypeOf(MovieList)).apply(this, arguments));
-	  }
-	
-	  _createClass(MovieList, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'ul',
-	        { className: 'Movies' },
-	        ' ',
-	        this.props.list.map(function (res) {
-	          var movie = res.show ? res.show : res;
-	          return _react2.default.createElement(_index2.default, { key: movie.id, movie: movie });
-	        }),
-	        ' '
-	      );
-	    }
-	  }]);
-	
-	  return MovieList;
-	}(_react2.default.Component);
+	  return _react2.default.createElement(
+	    'ul',
+	    { className: 'Movies' },
+	    ' ',
+	    list.map(function (res) {
+	      var movie = res.show ? res.show : res;
+	      return _react2.default.createElement(_index2.default, { key: movie.id, movie: movie });
+	    }),
+	    ' '
+	  );
+	}
 	
 	exports.default = MovieList;
 
@@ -22276,165 +22216,90 @@
 	  value: true
 	});
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _html2markdown = __webpack_require__(/*! html2markdown */ 177);
+	
+	var _html2markdown2 = _interopRequireDefault(_html2markdown);
+	
+	var _remarkable = __webpack_require__(/*! remarkable */ 180);
+	
+	var _remarkable2 = _interopRequireDefault(_remarkable);
+	
+	var _remarkableReact = __webpack_require__(/*! remarkable-react */ 241);
+	
+	var _remarkableReact2 = _interopRequireDefault(_remarkableReact);
 	
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _movieImage = __webpack_require__(/*! ./movie-image.jsx */ 177);
+	var _movieImage = __webpack_require__(/*! ./movie-image.jsx */ 245);
 	
 	var _movieImage2 = _interopRequireDefault(_movieImage);
 	
-	var _html2markdown = __webpack_require__(/*! html2markdown */ 178);
-	
-	var _html2markdown2 = _interopRequireDefault(_html2markdown);
-	
-	var _remarkable = __webpack_require__(/*! remarkable */ 181);
-	
-	var _remarkable2 = _interopRequireDefault(_remarkable);
-	
-	var _remarkableReact = __webpack_require__(/*! remarkable-react */ 242);
-	
-	var _remarkableReact2 = _interopRequireDefault(_remarkableReact);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function MovieItem(_ref) {
+	  var movie = _ref.movie;
 	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	// import MarkdownIt from 'markdown-it'
-	
-	var MovieItem = function (_React$Component) {
-	  _inherits(MovieItem, _React$Component);
-	
-	  function MovieItem() {
-	    _classCallCheck(this, MovieItem);
-	
-	    return _possibleConstructorReturn(this, (MovieItem.__proto__ || Object.getPrototypeOf(MovieItem)).apply(this, arguments));
-	  }
-	
-	  _createClass(MovieItem, [{
-	    key: 'componentdidMount',
-	    value: function componentdidMount() {}
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var movie = this.props.movie;
-	      var pic = movie.image ? JSON.stringify(movie.image["medium"]).split('"').join('') : 'https://www.raceentry.com/img/Race-Registration-Image-Not-Found.png';
-	      var md = new _remarkable2.default();
-	      md.renderer = new _remarkableReact2.default();
-	      var des = md.render((0, _html2markdown2.default)(movie.summary));
-	      return _react2.default.createElement(
-	        'li',
-	        { className: 'Movie' },
-	        _react2.default.createElement(_movieImage2.default, { title: movie.name, picture: pic }),
+	  var pic = movie.image ? JSON.stringify(movie.image.medium).split('"').join('') : 'https://www.raceentry.com/img/Race-Registration-Image-Not-Found.png';
+	  var md = new _remarkable2.default();
+	  md.renderer = new _remarkableReact2.default();
+	  var des = md.render((0, _html2markdown2.default)(movie.summary));
+	  return _react2.default.createElement(
+	    'li',
+	    { className: 'Movie' },
+	    _react2.default.createElement(_movieImage2.default, { title: movie.name, picture: pic }),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'u-movieModal hidden' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'container' },
+	        _react2.default.createElement('img', { className: 'Movie-img', src: pic, alt: movie.name }),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'u-movieModal hidden' },
+	          { className: 'Movie-body' },
 	          _react2.default.createElement(
-	            'div',
-	            { className: 'container' },
-	            _react2.default.createElement('img', { className: 'Movie-img', src: pic, alt: movie.name }),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'Movie-body' },
-	              _react2.default.createElement(
-	                'h4',
-	                { className: 'Movie-title' },
-	                movie.name
-	              ),
-	              _react2.default.createElement(
-	                'span',
-	                { className: 'Movie-span Movie-span--type' },
-	                movie.type
-	              ),
-	              _react2.default.createElement(
-	                'article',
-	                { className: 'Movie-span Movie-span--description' },
-	                des
-	              ),
-	              _react2.default.createElement(
-	                'a',
-	                { className: 'Movie-span Movie-span--link', target: '_blanck', href: movie.url },
-	                'Vér la pelicula'
-	              )
-	            )
+	            'h4',
+	            { className: 'Movie-title' },
+	            movie.name
+	          ),
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'Movie-span Movie-span--type' },
+	            movie.type
+	          ),
+	          _react2.default.createElement(
+	            'article',
+	            { className: 'Movie-span Movie-span--description' },
+	            des
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            {
+	              className: 'Movie-span Movie-span--link',
+	              target: '_blanck',
+	              href: movie.url
+	            },
+	            'Vér la pelicula'
 	          )
 	        )
-	      );
-	    }
-	  }]);
-	
-	  return MovieItem;
-	}(_react2.default.Component);
+	      )
+	    )
+	  );
+	}
 	
 	exports.default = MovieItem;
 
 /***/ },
 /* 177 */
-/*!**********************************************************!*\
-  !*** ./src/components/movies/movie-item/movie-image.jsx ***!
-  \**********************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var MovieImage = function (_React$Component) {
-	  _inherits(MovieImage, _React$Component);
-	
-	  function MovieImage() {
-	    _classCallCheck(this, MovieImage);
-	
-	    return _possibleConstructorReturn(this, (MovieImage.__proto__ || Object.getPrototypeOf(MovieImage)).apply(this, arguments));
-	  }
-	
-	  _createClass(MovieImage, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "figure",
-	        { className: "Movie-avatar" },
-	        _react2.default.createElement("img", { width: "100", title: this.props.title, alt: this.props.title, src: this.props.picture })
-	      );
-	    }
-	  }]);
-	
-	  return MovieImage;
-	}(_react2.default.Component);
-	
-	exports.default = MovieImage;
-
-/***/ },
-/* 178 */
 /*!**********************************!*\
   !*** ./~/html2markdown/index.js ***!
   \**********************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var html2markdown = __webpack_require__(/*! ./html2markdown */ 179);
-	var htmlParser = __webpack_require__(/*! ./markdown_html_parser */ 180);
+	var html2markdown = __webpack_require__(/*! ./html2markdown */ 178);
+	var htmlParser = __webpack_require__(/*! ./markdown_html_parser */ 179);
 	
 	module.exports = function(html, opts) {
 	  opts = opts || {};
@@ -22444,7 +22309,7 @@
 
 
 /***/ },
-/* 179 */
+/* 178 */
 /*!******************************************!*\
   !*** ./~/html2markdown/html2markdown.js ***!
   \******************************************/
@@ -23015,7 +22880,7 @@
 	});
 
 /***/ },
-/* 180 */
+/* 179 */
 /*!*************************************************!*\
   !*** ./~/html2markdown/markdown_html_parser.js ***!
   \*************************************************/
@@ -23353,7 +23218,7 @@
 	});
 
 /***/ },
-/* 181 */
+/* 180 */
 /*!*******************************!*\
   !*** ./~/remarkable/index.js ***!
   \*******************************/
@@ -23362,11 +23227,11 @@
 	'use strict';
 	
 	
-	module.exports = __webpack_require__(/*! ./lib/ */ 182);
+	module.exports = __webpack_require__(/*! ./lib/ */ 181);
 
 
 /***/ },
-/* 182 */
+/* 181 */
 /*!***********************************!*\
   !*** ./~/remarkable/lib/index.js ***!
   \***********************************/
@@ -23378,21 +23243,21 @@
 	 * Local dependencies
 	 */
 	
-	var assign       = __webpack_require__(/*! ./common/utils */ 183).assign;
-	var Renderer     = __webpack_require__(/*! ./renderer */ 185);
-	var ParserCore   = __webpack_require__(/*! ./parser_core */ 187);
-	var ParserBlock  = __webpack_require__(/*! ./parser_block */ 205);
-	var ParserInline = __webpack_require__(/*! ./parser_inline */ 220);
-	var Ruler        = __webpack_require__(/*! ./ruler */ 188);
+	var assign       = __webpack_require__(/*! ./common/utils */ 182).assign;
+	var Renderer     = __webpack_require__(/*! ./renderer */ 184);
+	var ParserCore   = __webpack_require__(/*! ./parser_core */ 186);
+	var ParserBlock  = __webpack_require__(/*! ./parser_block */ 204);
+	var ParserInline = __webpack_require__(/*! ./parser_inline */ 219);
+	var Ruler        = __webpack_require__(/*! ./ruler */ 187);
 	
 	/**
 	 * Preset configs
 	 */
 	
 	var config = {
-	  'default':    __webpack_require__(/*! ./configs/default */ 239),
-	  'full':       __webpack_require__(/*! ./configs/full */ 240),
-	  'commonmark': __webpack_require__(/*! ./configs/commonmark */ 241)
+	  'default':    __webpack_require__(/*! ./configs/default */ 238),
+	  'full':       __webpack_require__(/*! ./configs/full */ 239),
+	  'commonmark': __webpack_require__(/*! ./configs/commonmark */ 240)
 	};
 	
 	/**
@@ -23566,11 +23431,11 @@
 	 * rendering.
 	 */
 	
-	module.exports.utils = __webpack_require__(/*! ./common/utils */ 183);
+	module.exports.utils = __webpack_require__(/*! ./common/utils */ 182);
 
 
 /***/ },
-/* 183 */
+/* 182 */
 /*!******************************************!*\
   !*** ./~/remarkable/lib/common/utils.js ***!
   \******************************************/
@@ -23660,7 +23525,7 @@
 	
 	var NAMED_ENTITY_RE   = /&([a-z#][a-z0-9]{1,31});/gi;
 	var DIGITAL_ENTITY_TEST_RE = /^#((?:x[a-f0-9]{1,8}|[0-9]{1,8}))/i;
-	var entities = __webpack_require__(/*! ./entities */ 184);
+	var entities = __webpack_require__(/*! ./entities */ 183);
 	
 	function replaceEntityPattern(match, name) {
 	  var code = 0;
@@ -23720,7 +23585,7 @@
 
 
 /***/ },
-/* 184 */
+/* 183 */
 /*!*********************************************!*\
   !*** ./~/remarkable/lib/common/entities.js ***!
   \*********************************************/
@@ -25863,7 +25728,7 @@
 
 
 /***/ },
-/* 185 */
+/* 184 */
 /*!**************************************!*\
   !*** ./~/remarkable/lib/renderer.js ***!
   \**************************************/
@@ -25875,8 +25740,8 @@
 	 * Local dependencies
 	 */
 	
-	var utils = __webpack_require__(/*! ./common/utils */ 183);
-	var rules = __webpack_require__(/*! ./rules */ 186);
+	var utils = __webpack_require__(/*! ./common/utils */ 182);
+	var rules = __webpack_require__(/*! ./rules */ 185);
 	
 	/**
 	 * Expose `Renderer`
@@ -25947,7 +25812,7 @@
 
 
 /***/ },
-/* 186 */
+/* 185 */
 /*!***********************************!*\
   !*** ./~/remarkable/lib/rules.js ***!
   \***********************************/
@@ -25959,10 +25824,10 @@
 	 * Local dependencies
 	 */
 	
-	var has             = __webpack_require__(/*! ./common/utils */ 183).has;
-	var unescapeMd      = __webpack_require__(/*! ./common/utils */ 183).unescapeMd;
-	var replaceEntities = __webpack_require__(/*! ./common/utils */ 183).replaceEntities;
-	var escapeHtml      = __webpack_require__(/*! ./common/utils */ 183).escapeHtml;
+	var has             = __webpack_require__(/*! ./common/utils */ 182).has;
+	var unescapeMd      = __webpack_require__(/*! ./common/utils */ 182).unescapeMd;
+	var replaceEntities = __webpack_require__(/*! ./common/utils */ 182).replaceEntities;
+	var escapeHtml      = __webpack_require__(/*! ./common/utils */ 182).escapeHtml;
 	
 	/**
 	 * Renderer rules cache
@@ -26383,7 +26248,7 @@
 
 
 /***/ },
-/* 187 */
+/* 186 */
 /*!*****************************************!*\
   !*** ./~/remarkable/lib/parser_core.js ***!
   \*****************************************/
@@ -26395,22 +26260,22 @@
 	 * Local dependencies
 	 */
 	
-	var Ruler = __webpack_require__(/*! ./ruler */ 188);
+	var Ruler = __webpack_require__(/*! ./ruler */ 187);
 	
 	/**
 	 * Core parser `rules`
 	 */
 	
 	var _rules = [
-	  [ 'block',          __webpack_require__(/*! ./rules_core/block */ 189)          ],
-	  [ 'abbr',           __webpack_require__(/*! ./rules_core/abbr */ 190)           ],
-	  [ 'references',     __webpack_require__(/*! ./rules_core/references */ 193)     ],
-	  [ 'inline',         __webpack_require__(/*! ./rules_core/inline */ 198)         ],
-	  [ 'footnote_tail',  __webpack_require__(/*! ./rules_core/footnote_tail */ 199)  ],
-	  [ 'abbr2',          __webpack_require__(/*! ./rules_core/abbr2 */ 200)          ],
-	  [ 'replacements',   __webpack_require__(/*! ./rules_core/replacements */ 201)   ],
-	  [ 'smartquotes',    __webpack_require__(/*! ./rules_core/smartquotes */ 202)    ],
-	  [ 'linkify',        __webpack_require__(/*! ./rules_core/linkify */ 203)        ]
+	  [ 'block',          __webpack_require__(/*! ./rules_core/block */ 188)          ],
+	  [ 'abbr',           __webpack_require__(/*! ./rules_core/abbr */ 189)           ],
+	  [ 'references',     __webpack_require__(/*! ./rules_core/references */ 192)     ],
+	  [ 'inline',         __webpack_require__(/*! ./rules_core/inline */ 197)         ],
+	  [ 'footnote_tail',  __webpack_require__(/*! ./rules_core/footnote_tail */ 198)  ],
+	  [ 'abbr2',          __webpack_require__(/*! ./rules_core/abbr2 */ 199)          ],
+	  [ 'replacements',   __webpack_require__(/*! ./rules_core/replacements */ 200)   ],
+	  [ 'smartquotes',    __webpack_require__(/*! ./rules_core/smartquotes */ 201)    ],
+	  [ 'linkify',        __webpack_require__(/*! ./rules_core/linkify */ 202)        ]
 	];
 	
 	/**
@@ -26450,7 +26315,7 @@
 
 
 /***/ },
-/* 188 */
+/* 187 */
 /*!***********************************!*\
   !*** ./~/remarkable/lib/ruler.js ***!
   \***********************************/
@@ -26732,7 +26597,7 @@
 
 
 /***/ },
-/* 189 */
+/* 188 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_core/block.js ***!
   \**********************************************/
@@ -26758,7 +26623,7 @@
 
 
 /***/ },
-/* 190 */
+/* 189 */
 /*!*********************************************!*\
   !*** ./~/remarkable/lib/rules_core/abbr.js ***!
   \*********************************************/
@@ -26770,8 +26635,8 @@
 	'use strict';
 	
 	
-	var StateInline    = __webpack_require__(/*! ../rules_inline/state_inline */ 191);
-	var parseLinkLabel = __webpack_require__(/*! ../helpers/parse_link_label */ 192);
+	var StateInline    = __webpack_require__(/*! ../rules_inline/state_inline */ 190);
+	var parseLinkLabel = __webpack_require__(/*! ../helpers/parse_link_label */ 191);
 	
 	
 	function parseAbbr(str, parserInline, options, env) {
@@ -26837,7 +26702,7 @@
 
 
 /***/ },
-/* 191 */
+/* 190 */
 /*!*******************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/state_inline.js ***!
   \*******************************************************/
@@ -26928,7 +26793,7 @@
 
 
 /***/ },
-/* 192 */
+/* 191 */
 /*!******************************************************!*\
   !*** ./~/remarkable/lib/helpers/parse_link_label.js ***!
   \******************************************************/
@@ -26996,7 +26861,7 @@
 
 
 /***/ },
-/* 193 */
+/* 192 */
 /*!***************************************************!*\
   !*** ./~/remarkable/lib/rules_core/references.js ***!
   \***************************************************/
@@ -27005,11 +26870,11 @@
 	'use strict';
 	
 	
-	var StateInline          = __webpack_require__(/*! ../rules_inline/state_inline */ 191);
-	var parseLinkLabel       = __webpack_require__(/*! ../helpers/parse_link_label */ 192);
-	var parseLinkDestination = __webpack_require__(/*! ../helpers/parse_link_destination */ 194);
-	var parseLinkTitle       = __webpack_require__(/*! ../helpers/parse_link_title */ 196);
-	var normalizeReference   = __webpack_require__(/*! ../helpers/normalize_reference */ 197);
+	var StateInline          = __webpack_require__(/*! ../rules_inline/state_inline */ 190);
+	var parseLinkLabel       = __webpack_require__(/*! ../helpers/parse_link_label */ 191);
+	var parseLinkDestination = __webpack_require__(/*! ../helpers/parse_link_destination */ 193);
+	var parseLinkTitle       = __webpack_require__(/*! ../helpers/parse_link_title */ 195);
+	var normalizeReference   = __webpack_require__(/*! ../helpers/normalize_reference */ 196);
 	
 	
 	function parseReference(str, parser, options, env) {
@@ -27103,7 +26968,7 @@
 
 
 /***/ },
-/* 194 */
+/* 193 */
 /*!************************************************************!*\
   !*** ./~/remarkable/lib/helpers/parse_link_destination.js ***!
   \************************************************************/
@@ -27112,8 +26977,8 @@
 	'use strict';
 	
 	
-	var normalizeLink = __webpack_require__(/*! ./normalize_link */ 195);
-	var unescapeMd    = __webpack_require__(/*! ../common/utils */ 183).unescapeMd;
+	var normalizeLink = __webpack_require__(/*! ./normalize_link */ 194);
+	var unescapeMd    = __webpack_require__(/*! ../common/utils */ 182).unescapeMd;
 	
 	/**
 	 * Parse link destination
@@ -27195,7 +27060,7 @@
 
 
 /***/ },
-/* 195 */
+/* 194 */
 /*!****************************************************!*\
   !*** ./~/remarkable/lib/helpers/normalize_link.js ***!
   \****************************************************/
@@ -27203,7 +27068,7 @@
 
 	'use strict';
 	
-	var replaceEntities = __webpack_require__(/*! ../common/utils */ 183).replaceEntities;
+	var replaceEntities = __webpack_require__(/*! ../common/utils */ 182).replaceEntities;
 	
 	module.exports = function normalizeLink(url) {
 	  var normalized = replaceEntities(url);
@@ -27217,7 +27082,7 @@
 
 
 /***/ },
-/* 196 */
+/* 195 */
 /*!******************************************************!*\
   !*** ./~/remarkable/lib/helpers/parse_link_title.js ***!
   \******************************************************/
@@ -27226,7 +27091,7 @@
 	'use strict';
 	
 	
-	var unescapeMd = __webpack_require__(/*! ../common/utils */ 183).unescapeMd;
+	var unescapeMd = __webpack_require__(/*! ../common/utils */ 182).unescapeMd;
 	
 	/**
 	 * Parse link title
@@ -27272,7 +27137,7 @@
 
 
 /***/ },
-/* 197 */
+/* 196 */
 /*!*********************************************************!*\
   !*** ./~/remarkable/lib/helpers/normalize_reference.js ***!
   \*********************************************************/
@@ -27289,7 +27154,7 @@
 
 
 /***/ },
-/* 198 */
+/* 197 */
 /*!***********************************************!*\
   !*** ./~/remarkable/lib/rules_core/inline.js ***!
   \***********************************************/
@@ -27311,7 +27176,7 @@
 
 
 /***/ },
-/* 199 */
+/* 198 */
 /*!******************************************************!*\
   !*** ./~/remarkable/lib/rules_core/footnote_tail.js ***!
   \******************************************************/
@@ -27415,7 +27280,7 @@
 
 
 /***/ },
-/* 200 */
+/* 199 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_core/abbr2.js ***!
   \**********************************************/
@@ -27512,7 +27377,7 @@
 
 
 /***/ },
-/* 201 */
+/* 200 */
 /*!*****************************************************!*\
   !*** ./~/remarkable/lib/rules_core/replacements.js ***!
   \*****************************************************/
@@ -27585,7 +27450,7 @@
 
 
 /***/ },
-/* 202 */
+/* 201 */
 /*!****************************************************!*\
   !*** ./~/remarkable/lib/rules_core/smartquotes.js ***!
   \****************************************************/
@@ -27707,7 +27572,7 @@
 
 
 /***/ },
-/* 203 */
+/* 202 */
 /*!************************************************!*\
   !*** ./~/remarkable/lib/rules_core/linkify.js ***!
   \************************************************/
@@ -27720,7 +27585,7 @@
 	'use strict';
 	
 	
-	var Autolinker = __webpack_require__(/*! autolinker */ 204);
+	var Autolinker = __webpack_require__(/*! autolinker */ 203);
 	
 	
 	var LINK_SCAN_RE = /www|@|\:\/\//;
@@ -27877,7 +27742,7 @@
 
 
 /***/ },
-/* 204 */
+/* 203 */
 /*!*****************************************!*\
   !*** ./~/autolinker/dist/Autolinker.js ***!
   \*****************************************/
@@ -30209,7 +30074,7 @@
 
 
 /***/ },
-/* 205 */
+/* 204 */
 /*!******************************************!*\
   !*** ./~/remarkable/lib/parser_block.js ***!
   \******************************************/
@@ -30221,26 +30086,26 @@
 	 * Local dependencies
 	 */
 	
-	var Ruler      = __webpack_require__(/*! ./ruler */ 188);
-	var StateBlock = __webpack_require__(/*! ./rules_block/state_block */ 206);
+	var Ruler      = __webpack_require__(/*! ./ruler */ 187);
+	var StateBlock = __webpack_require__(/*! ./rules_block/state_block */ 205);
 	
 	/**
 	 * Parser rules
 	 */
 	
 	var _rules = [
-	  [ 'code',       __webpack_require__(/*! ./rules_block/code */ 207) ],
-	  [ 'fences',     __webpack_require__(/*! ./rules_block/fences */ 208),     [ 'paragraph', 'blockquote', 'list' ] ],
-	  [ 'blockquote', __webpack_require__(/*! ./rules_block/blockquote */ 209), [ 'paragraph', 'blockquote', 'list' ] ],
-	  [ 'hr',         __webpack_require__(/*! ./rules_block/hr */ 210),         [ 'paragraph', 'blockquote', 'list' ] ],
-	  [ 'list',       __webpack_require__(/*! ./rules_block/list */ 211),       [ 'paragraph', 'blockquote' ] ],
-	  [ 'footnote',   __webpack_require__(/*! ./rules_block/footnote */ 212),   [ 'paragraph' ] ],
-	  [ 'heading',    __webpack_require__(/*! ./rules_block/heading */ 213),    [ 'paragraph', 'blockquote' ] ],
-	  [ 'lheading',   __webpack_require__(/*! ./rules_block/lheading */ 214) ],
-	  [ 'htmlblock',  __webpack_require__(/*! ./rules_block/htmlblock */ 215),  [ 'paragraph', 'blockquote' ] ],
-	  [ 'table',      __webpack_require__(/*! ./rules_block/table */ 217),      [ 'paragraph' ] ],
-	  [ 'deflist',    __webpack_require__(/*! ./rules_block/deflist */ 218),    [ 'paragraph' ] ],
-	  [ 'paragraph',  __webpack_require__(/*! ./rules_block/paragraph */ 219) ]
+	  [ 'code',       __webpack_require__(/*! ./rules_block/code */ 206) ],
+	  [ 'fences',     __webpack_require__(/*! ./rules_block/fences */ 207),     [ 'paragraph', 'blockquote', 'list' ] ],
+	  [ 'blockquote', __webpack_require__(/*! ./rules_block/blockquote */ 208), [ 'paragraph', 'blockquote', 'list' ] ],
+	  [ 'hr',         __webpack_require__(/*! ./rules_block/hr */ 209),         [ 'paragraph', 'blockquote', 'list' ] ],
+	  [ 'list',       __webpack_require__(/*! ./rules_block/list */ 210),       [ 'paragraph', 'blockquote' ] ],
+	  [ 'footnote',   __webpack_require__(/*! ./rules_block/footnote */ 211),   [ 'paragraph' ] ],
+	  [ 'heading',    __webpack_require__(/*! ./rules_block/heading */ 212),    [ 'paragraph', 'blockquote' ] ],
+	  [ 'lheading',   __webpack_require__(/*! ./rules_block/lheading */ 213) ],
+	  [ 'htmlblock',  __webpack_require__(/*! ./rules_block/htmlblock */ 214),  [ 'paragraph', 'blockquote' ] ],
+	  [ 'table',      __webpack_require__(/*! ./rules_block/table */ 216),      [ 'paragraph' ] ],
+	  [ 'deflist',    __webpack_require__(/*! ./rules_block/deflist */ 217),    [ 'paragraph' ] ],
+	  [ 'paragraph',  __webpack_require__(/*! ./rules_block/paragraph */ 218) ]
 	];
 	
 	/**
@@ -30373,7 +30238,7 @@
 
 
 /***/ },
-/* 206 */
+/* 205 */
 /*!*****************************************************!*\
   !*** ./~/remarkable/lib/rules_block/state_block.js ***!
   \*****************************************************/
@@ -30540,7 +30405,7 @@
 
 
 /***/ },
-/* 207 */
+/* 206 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_block/code.js ***!
   \**********************************************/
@@ -30585,7 +30450,7 @@
 
 
 /***/ },
-/* 208 */
+/* 207 */
 /*!************************************************!*\
   !*** ./~/remarkable/lib/rules_block/fences.js ***!
   \************************************************/
@@ -30685,7 +30550,7 @@
 
 
 /***/ },
-/* 209 */
+/* 208 */
 /*!****************************************************!*\
   !*** ./~/remarkable/lib/rules_block/blockquote.js ***!
   \****************************************************/
@@ -30827,7 +30692,7 @@
 
 
 /***/ },
-/* 210 */
+/* 209 */
 /*!********************************************!*\
   !*** ./~/remarkable/lib/rules_block/hr.js ***!
   \********************************************/
@@ -30881,7 +30746,7 @@
 
 
 /***/ },
-/* 211 */
+/* 210 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_block/list.js ***!
   \**********************************************/
@@ -31156,7 +31021,7 @@
 
 
 /***/ },
-/* 212 */
+/* 211 */
 /*!**************************************************!*\
   !*** ./~/remarkable/lib/rules_block/footnote.js ***!
   \**************************************************/
@@ -31232,7 +31097,7 @@
 
 
 /***/ },
-/* 213 */
+/* 212 */
 /*!*************************************************!*\
   !*** ./~/remarkable/lib/rules_block/heading.js ***!
   \*************************************************/
@@ -31299,7 +31164,7 @@
 
 
 /***/ },
-/* 214 */
+/* 213 */
 /*!**************************************************!*\
   !*** ./~/remarkable/lib/rules_block/lheading.js ***!
   \**************************************************/
@@ -31363,7 +31228,7 @@
 
 
 /***/ },
-/* 215 */
+/* 214 */
 /*!***************************************************!*\
   !*** ./~/remarkable/lib/rules_block/htmlblock.js ***!
   \***************************************************/
@@ -31374,7 +31239,7 @@
 	'use strict';
 	
 	
-	var block_names = __webpack_require__(/*! ../common/html_blocks */ 216);
+	var block_names = __webpack_require__(/*! ../common/html_blocks */ 215);
 	
 	
 	var HTML_TAG_OPEN_RE = /^<([a-zA-Z]{1,15})[\s\/>]/;
@@ -31446,7 +31311,7 @@
 
 
 /***/ },
-/* 216 */
+/* 215 */
 /*!************************************************!*\
   !*** ./~/remarkable/lib/common/html_blocks.js ***!
   \************************************************/
@@ -31517,7 +31382,7 @@
 
 
 /***/ },
-/* 217 */
+/* 216 */
 /*!***********************************************!*\
   !*** ./~/remarkable/lib/rules_block/table.js ***!
   \***********************************************/
@@ -31660,7 +31525,7 @@
 
 
 /***/ },
-/* 218 */
+/* 217 */
 /*!*************************************************!*\
   !*** ./~/remarkable/lib/rules_block/deflist.js ***!
   \*************************************************/
@@ -31876,7 +31741,7 @@
 
 
 /***/ },
-/* 219 */
+/* 218 */
 /*!***************************************************!*\
   !*** ./~/remarkable/lib/rules_block/paragraph.js ***!
   \***************************************************/
@@ -31944,7 +31809,7 @@
 
 
 /***/ },
-/* 220 */
+/* 219 */
 /*!*******************************************!*\
   !*** ./~/remarkable/lib/parser_inline.js ***!
   \*******************************************/
@@ -31956,31 +31821,31 @@
 	 * Local dependencies
 	 */
 	
-	var Ruler       = __webpack_require__(/*! ./ruler */ 188);
-	var StateInline = __webpack_require__(/*! ./rules_inline/state_inline */ 191);
-	var utils       = __webpack_require__(/*! ./common/utils */ 183);
+	var Ruler       = __webpack_require__(/*! ./ruler */ 187);
+	var StateInline = __webpack_require__(/*! ./rules_inline/state_inline */ 190);
+	var utils       = __webpack_require__(/*! ./common/utils */ 182);
 	
 	/**
 	 * Inline Parser `rules`
 	 */
 	
 	var _rules = [
-	  [ 'text',            __webpack_require__(/*! ./rules_inline/text */ 221) ],
-	  [ 'newline',         __webpack_require__(/*! ./rules_inline/newline */ 222) ],
-	  [ 'escape',          __webpack_require__(/*! ./rules_inline/escape */ 223) ],
-	  [ 'backticks',       __webpack_require__(/*! ./rules_inline/backticks */ 224) ],
-	  [ 'del',             __webpack_require__(/*! ./rules_inline/del */ 225) ],
-	  [ 'ins',             __webpack_require__(/*! ./rules_inline/ins */ 226) ],
-	  [ 'mark',            __webpack_require__(/*! ./rules_inline/mark */ 227) ],
-	  [ 'emphasis',        __webpack_require__(/*! ./rules_inline/emphasis */ 228) ],
-	  [ 'sub',             __webpack_require__(/*! ./rules_inline/sub */ 229) ],
-	  [ 'sup',             __webpack_require__(/*! ./rules_inline/sup */ 230) ],
-	  [ 'links',           __webpack_require__(/*! ./rules_inline/links */ 231) ],
-	  [ 'footnote_inline', __webpack_require__(/*! ./rules_inline/footnote_inline */ 232) ],
-	  [ 'footnote_ref',    __webpack_require__(/*! ./rules_inline/footnote_ref */ 233) ],
-	  [ 'autolink',        __webpack_require__(/*! ./rules_inline/autolink */ 234) ],
-	  [ 'htmltag',         __webpack_require__(/*! ./rules_inline/htmltag */ 236) ],
-	  [ 'entity',          __webpack_require__(/*! ./rules_inline/entity */ 238) ]
+	  [ 'text',            __webpack_require__(/*! ./rules_inline/text */ 220) ],
+	  [ 'newline',         __webpack_require__(/*! ./rules_inline/newline */ 221) ],
+	  [ 'escape',          __webpack_require__(/*! ./rules_inline/escape */ 222) ],
+	  [ 'backticks',       __webpack_require__(/*! ./rules_inline/backticks */ 223) ],
+	  [ 'del',             __webpack_require__(/*! ./rules_inline/del */ 224) ],
+	  [ 'ins',             __webpack_require__(/*! ./rules_inline/ins */ 225) ],
+	  [ 'mark',            __webpack_require__(/*! ./rules_inline/mark */ 226) ],
+	  [ 'emphasis',        __webpack_require__(/*! ./rules_inline/emphasis */ 227) ],
+	  [ 'sub',             __webpack_require__(/*! ./rules_inline/sub */ 228) ],
+	  [ 'sup',             __webpack_require__(/*! ./rules_inline/sup */ 229) ],
+	  [ 'links',           __webpack_require__(/*! ./rules_inline/links */ 230) ],
+	  [ 'footnote_inline', __webpack_require__(/*! ./rules_inline/footnote_inline */ 231) ],
+	  [ 'footnote_ref',    __webpack_require__(/*! ./rules_inline/footnote_ref */ 232) ],
+	  [ 'autolink',        __webpack_require__(/*! ./rules_inline/autolink */ 233) ],
+	  [ 'htmltag',         __webpack_require__(/*! ./rules_inline/htmltag */ 235) ],
+	  [ 'entity',          __webpack_require__(/*! ./rules_inline/entity */ 237) ]
 	];
 	
 	/**
@@ -32114,7 +31979,7 @@
 
 
 /***/ },
-/* 221 */
+/* 220 */
 /*!***********************************************!*\
   !*** ./~/remarkable/lib/rules_inline/text.js ***!
   \***********************************************/
@@ -32176,7 +32041,7 @@
 
 
 /***/ },
-/* 222 */
+/* 221 */
 /*!**************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/newline.js ***!
   \**************************************************/
@@ -32233,7 +32098,7 @@
 
 
 /***/ },
-/* 223 */
+/* 222 */
 /*!*************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/escape.js ***!
   \*************************************************/
@@ -32291,7 +32156,7 @@
 
 
 /***/ },
-/* 224 */
+/* 223 */
 /*!****************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/backticks.js ***!
   \****************************************************/
@@ -32346,7 +32211,7 @@
 
 
 /***/ },
-/* 225 */
+/* 224 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_inline/del.js ***!
   \**********************************************/
@@ -32439,7 +32304,7 @@
 
 
 /***/ },
-/* 226 */
+/* 225 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_inline/ins.js ***!
   \**********************************************/
@@ -32532,7 +32397,7 @@
 
 
 /***/ },
-/* 227 */
+/* 226 */
 /*!***********************************************!*\
   !*** ./~/remarkable/lib/rules_inline/mark.js ***!
   \***********************************************/
@@ -32625,7 +32490,7 @@
 
 
 /***/ },
-/* 228 */
+/* 227 */
 /*!***************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/emphasis.js ***!
   \***************************************************/
@@ -32783,7 +32648,7 @@
 
 
 /***/ },
-/* 229 */
+/* 228 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_inline/sub.js ***!
   \**********************************************/
@@ -32850,7 +32715,7 @@
 
 
 /***/ },
-/* 230 */
+/* 229 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_inline/sup.js ***!
   \**********************************************/
@@ -32917,7 +32782,7 @@
 
 
 /***/ },
-/* 231 */
+/* 230 */
 /*!************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/links.js ***!
   \************************************************/
@@ -32927,10 +32792,10 @@
 	
 	'use strict';
 	
-	var parseLinkLabel       = __webpack_require__(/*! ../helpers/parse_link_label */ 192);
-	var parseLinkDestination = __webpack_require__(/*! ../helpers/parse_link_destination */ 194);
-	var parseLinkTitle       = __webpack_require__(/*! ../helpers/parse_link_title */ 196);
-	var normalizeReference   = __webpack_require__(/*! ../helpers/normalize_reference */ 197);
+	var parseLinkLabel       = __webpack_require__(/*! ../helpers/parse_link_label */ 191);
+	var parseLinkDestination = __webpack_require__(/*! ../helpers/parse_link_destination */ 193);
+	var parseLinkTitle       = __webpack_require__(/*! ../helpers/parse_link_title */ 195);
+	var normalizeReference   = __webpack_require__(/*! ../helpers/normalize_reference */ 196);
 	
 	
 	module.exports = function links(state, silent) {
@@ -33096,7 +32961,7 @@
 
 
 /***/ },
-/* 232 */
+/* 231 */
 /*!**********************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/footnote_inline.js ***!
   \**********************************************************/
@@ -33106,7 +32971,7 @@
 	
 	'use strict';
 	
-	var parseLinkLabel = __webpack_require__(/*! ../helpers/parse_link_label */ 192);
+	var parseLinkLabel = __webpack_require__(/*! ../helpers/parse_link_label */ 191);
 	
 	
 	module.exports = function footnote_inline(state, silent) {
@@ -33158,7 +33023,7 @@
 
 
 /***/ },
-/* 233 */
+/* 232 */
 /*!*******************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/footnote_ref.js ***!
   \*******************************************************/
@@ -33229,7 +33094,7 @@
 
 
 /***/ },
-/* 234 */
+/* 233 */
 /*!***************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/autolink.js ***!
   \***************************************************/
@@ -33239,8 +33104,8 @@
 	
 	'use strict';
 	
-	var url_schemas   = __webpack_require__(/*! ../common/url_schemas */ 235);
-	var normalizeLink = __webpack_require__(/*! ../helpers/normalize_link */ 195);
+	var url_schemas   = __webpack_require__(/*! ../common/url_schemas */ 234);
+	var normalizeLink = __webpack_require__(/*! ../helpers/normalize_link */ 194);
 	
 	
 	/*eslint max-len:0*/
@@ -33316,7 +33181,7 @@
 
 
 /***/ },
-/* 235 */
+/* 234 */
 /*!************************************************!*\
   !*** ./~/remarkable/lib/common/url_schemas.js ***!
   \************************************************/
@@ -33497,7 +33362,7 @@
 
 
 /***/ },
-/* 236 */
+/* 235 */
 /*!**************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/htmltag.js ***!
   \**************************************************/
@@ -33508,7 +33373,7 @@
 	'use strict';
 	
 	
-	var HTML_TAG_RE = __webpack_require__(/*! ../common/html_re */ 237).HTML_TAG_RE;
+	var HTML_TAG_RE = __webpack_require__(/*! ../common/html_re */ 236).HTML_TAG_RE;
 	
 	
 	function isLetter(ch) {
@@ -33555,7 +33420,7 @@
 
 
 /***/ },
-/* 237 */
+/* 236 */
 /*!********************************************!*\
   !*** ./~/remarkable/lib/common/html_re.js ***!
   \********************************************/
@@ -33623,7 +33488,7 @@
 
 
 /***/ },
-/* 238 */
+/* 237 */
 /*!*************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/entity.js ***!
   \*************************************************/
@@ -33633,10 +33498,10 @@
 	
 	'use strict';
 	
-	var entities          = __webpack_require__(/*! ../common/entities */ 184);
-	var has               = __webpack_require__(/*! ../common/utils */ 183).has;
-	var isValidEntityCode = __webpack_require__(/*! ../common/utils */ 183).isValidEntityCode;
-	var fromCodePoint     = __webpack_require__(/*! ../common/utils */ 183).fromCodePoint;
+	var entities          = __webpack_require__(/*! ../common/entities */ 183);
+	var has               = __webpack_require__(/*! ../common/utils */ 182).has;
+	var isValidEntityCode = __webpack_require__(/*! ../common/utils */ 182).isValidEntityCode;
+	var fromCodePoint     = __webpack_require__(/*! ../common/utils */ 182).fromCodePoint;
 	
 	
 	var DIGITAL_RE = /^&#((?:x[a-f0-9]{1,8}|[0-9]{1,8}));/i;
@@ -33680,7 +33545,7 @@
 
 
 /***/ },
-/* 239 */
+/* 238 */
 /*!*********************************************!*\
   !*** ./~/remarkable/lib/configs/default.js ***!
   \*********************************************/
@@ -33768,7 +33633,7 @@
 
 
 /***/ },
-/* 240 */
+/* 239 */
 /*!******************************************!*\
   !*** ./~/remarkable/lib/configs/full.js ***!
   \******************************************/
@@ -33815,7 +33680,7 @@
 
 
 /***/ },
-/* 241 */
+/* 240 */
 /*!************************************************!*\
   !*** ./~/remarkable/lib/configs/commonmark.js ***!
   \************************************************/
@@ -33895,7 +33760,7 @@
 
 
 /***/ },
-/* 242 */
+/* 241 */
 /*!*****************************************!*\
   !*** ./~/remarkable-react/lib/index.js ***!
   \*****************************************/
@@ -33907,7 +33772,7 @@
 	  value: true
 	});
 	
-	var _renderer = __webpack_require__(/*! ./lib/renderer */ 243);
+	var _renderer = __webpack_require__(/*! ./lib/renderer */ 242);
 	
 	Object.defineProperty(exports, 'default', {
 	  enumerable: true,
@@ -33919,7 +33784,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 243 */
+/* 242 */
 /*!************************************************!*\
   !*** ./~/remarkable-react/lib/lib/renderer.js ***!
   \************************************************/
@@ -33941,7 +33806,7 @@
 	
 	var _ReactDOMFactories2 = _interopRequireDefault(_ReactDOMFactories);
 	
-	var _tokenTreeBuilder = __webpack_require__(/*! ./token-tree-builder */ 244);
+	var _tokenTreeBuilder = __webpack_require__(/*! ./token-tree-builder */ 243);
 	
 	var _tokenTreeBuilder2 = _interopRequireDefault(_tokenTreeBuilder);
 	
@@ -34045,7 +33910,7 @@
 	exports.default = Renderer;
 
 /***/ },
-/* 244 */
+/* 243 */
 /*!**********************************************************!*\
   !*** ./~/remarkable-react/lib/lib/token-tree-builder.js ***!
   \**********************************************************/
@@ -34059,7 +33924,7 @@
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _tokenTypes = __webpack_require__(/*! ./token-types */ 245);
+	var _tokenTypes = __webpack_require__(/*! ./token-types */ 244);
 	
 	var tokenTypes = _interopRequireWildcard(_tokenTypes);
 	
@@ -34150,7 +34015,7 @@
 	exports.default = buildTokenTree;
 
 /***/ },
-/* 245 */
+/* 244 */
 /*!***************************************************!*\
   !*** ./~/remarkable-react/lib/lib/token-types.js ***!
   \***************************************************/
@@ -34189,6 +34054,43 @@
 	var th_open = exports.th_open = 'th';
 	var thead_open = exports.thead_open = 'thead';
 	var tr_open = exports.tr_open = 'tr';
+
+/***/ },
+/* 245 */
+/*!**********************************************************!*\
+  !*** ./src/components/movies/movie-item/movie-image.jsx ***!
+  \**********************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function MovieImage(_ref) {
+	  var title = _ref.title;
+	  var picture = _ref.picture;
+	
+	  return _react2.default.createElement(
+	    "figure",
+	    { className: "Movie-avatar" },
+	    _react2.default.createElement("img", {
+	      width: "170",
+	      title: title,
+	      alt: title,
+	      src: picture
+	    })
+	  );
+	}
+	
+	exports.default = MovieImage;
 
 /***/ },
 /* 246 */

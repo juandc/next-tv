@@ -1,13 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-class MovieImage extends React.Component {
-  render () {
-    return (
-      <figure className="Movie-avatar">
-        <img width="100" title={ this.props.title } alt={ this.props.title } src={ this.props.picture } />
-      </figure>
-    )
-  }
+function MovieImage({ title, picture }) {
+  return (
+    <figure className="Movie-avatar">
+      <img
+        width="170"
+        title={title}
+        alt={title}
+        src={picture}
+      />
+    </figure>
+  );
 }
 
-export default MovieImage
+export default MovieImage;

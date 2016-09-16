@@ -2,6 +2,9 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var path = require("path")
 
 var config = {
+  eslint: {
+    configFile: '.eslintrc'
+  },
   entry: {
     src: './src/app.jsx',
   },
@@ -10,6 +13,9 @@ var config = {
     filename: 'app.js',
   },
   module: {
+    preLoaders: [{
+      test: /\.jsx$/, loader: "eslint-loader", exclude: ['/node_modules/', '/public/src/']
+    }],
     loaders: [
       {
         test: /\.jsx?/,

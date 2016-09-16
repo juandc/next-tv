@@ -36,6 +36,12 @@
     "babel-preset-react": "^6.11.1",
     "babelify": "^7.3.0",
     "css-loader": "^0.25.0",
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb": "^11.1.0",
+    "eslint-config-airbnb-plus": "^5.0.1",
+    "eslint-plugin-import": "^1.15.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.2.2",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
@@ -54,5 +60,11 @@
     "stylus-loader": "^2.3.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb": "^11.1.0",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-react": "^6.2.2"
   }
 }
