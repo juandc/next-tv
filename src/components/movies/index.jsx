@@ -6,7 +6,7 @@ class Movies extends React.Component {
     super(props);
     this.state = {
       movies: [],
-      search: 'jim',
+      search: 'robot',
       full: 'http://api.tvmaze.com/shows',
       url: 'http://api.tvmaze.com/search/shows?q=',
     };
