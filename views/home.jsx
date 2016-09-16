@@ -13,10 +13,12 @@ const Template = React.createClass({
           <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
           <title>{ title }</title>
           <link rel="shortcut icon" type="image/x-icon" href="https://facebook.github.io/react/img/logo.svg"/>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans|Roboto+Condensed"/>
         </head>
         <body>
           <div id="content"></div>
           <script src="src/app.js"></script>
+          <script src="src/modal.js"></script>
         </body>
       </html>
     )

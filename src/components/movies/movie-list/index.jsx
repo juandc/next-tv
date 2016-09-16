@@ -2,9 +2,6 @@ import React from 'react'
 import MovieItem from '../movie-item/index.jsx'
 
 class MovieList extends React.Component {
-  // constructor (props) {
-  //   this.onClick
-  // }
   render () {
     return (
       <ul className="Movies"> {

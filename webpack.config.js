@@ -2,9 +2,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var path = require("path")
 
 var config = {
-  // context: path.resolve(__dirname, 'src/'),
   entry: {
-    // styles: './styles/main.styl',
     src: './src/app.jsx',
   },
   output: {

@@ -7,13 +7,14 @@ class Movies extends React.Component {
     this.state = {
       movies: [],
       search: 'robot',
-      url: 'http://api.tvmaze.com/search/shows?q=robot',
-      // url: 'http://api.tvmaze.com/shows',
+      full: 'http://api.tvmaze.com/shows',
+      url: 'http://api.tvmaze.com/search/shows?q=',
     }
   }
   componentWillMount () {
-    this.setState({ url: `http://api.tvmaze.com/search/shows?q=${this.state.search}` })
-    fetch(this.state.url)
+    let api = this.state.search != '' ? `${this.state.url}${this.state.search}` : this.state.full
+    console.log(`Api: ${api} \n Url: ${this.state.url} \n Search word is: ${this.state.search} `)
+    fetch(api)
       .then((res) => {
         return res.json()
       })
@@ -23,14 +24,37 @@ class Movies extends React.Component {
   }
   render () {
     if (!this.state.movies.length) {
-      return <div className="container">
-        <p className="">Cargando peliculas...</p>
-        <figure className="ChargingImg">
-          <img src="img/load2.gif" />
-        </figure>
+      return <div className="container" id="chargingContainer">
+        <div className="ChargingContainer">
+          <p className="ChargingContainer-span">Cargando peliculas...</p>
+          <figure className="ChargingContainer-img">
+            <img src="img/load2.gif" />
+          </figure>
+        </div>
+        { setInterval( function () {
+          if (document.getElementById('chargingContainer')) {
+            document.getElementById('chargingContainer').innerHTML = `<div class="ChargingContainer">
+              <p class="ChargingContainer-span">Lo sentimos... no hay peliculas</p>
+              <figure class="ChargingContainer-img">
+                <img height="200" src="http://media0.giphy.com/media/l41lGxxaSgnMk7rIA/giphy.gif" />
+              </figure>
+            </div>`
+          }
+        }, 4000)}
       </div>
     }
     return ( <div className="container">
+      <div style={{
+        background: 'lightblue', position: 'absolute',
+        left: '10%', top: '82px',
+        width: '80%', height: '70px',
+        display: 'flex', alignItems: 'center'
+      }} >
+        <h4 style={{ fontFamily: 'Open Sans', color: '#fff', margin: '0 0 0 10px', fontSize: '20px' }} >
+        Resultados para:
+        <span style={{ fontFamily: 'Dosis', textDecoration: 'underline', paddingLeft: '5px' }}>{ this.state.search.toUpperCase() }</span>
+      </h4>
+      </div>
       <MovieList list={ this.state.movies } />
     </div> )
   }

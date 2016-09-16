@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
-import ReactDOM, { render } from 'react-dom'
+import Menu from './components/menu/index.jsx'
 import Movies from './components/movies/index.jsx'
 
 class Template extends React.Component {
   render () {
     return (
-      <div>
+      <section>
+        <Menu />
         <Movies />
-      </div>
+      </section>
     )
   }
 }

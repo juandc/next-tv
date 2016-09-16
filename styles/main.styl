@@ -22,13 +22,12 @@ body
   justify-content center
 
 .container
-  // border 1px solid #000
   border-radius 2px
   display flex
   flex 1
   flex-direction column
   flex-wrap wrap
-  justify-content center
+  justify-content flex-start
   margin 0 auto
   max-width 650px
   position relative
@@ -41,12 +40,42 @@ body
     content ''
     display table
 
+.ChargingContainer
+  text-align center
+  margin 0 auto
+  &-span
+  &-img
+    font-family 'Dosis', Arial, "Helvetica Neue", Helvetica, sans-serif
+    font-size 25px
+
+.Menu
+  background-color #D24D57
+  box-shadow 1px 1px 4px 4px #555
+  color #fff
+  display flex
+  align-items center
+  justify-content center
+  fixed top 0 left 0 right 0
+  font-family 'Roboto Condensed', Arial, "Helvetica Neue", Helvetica, sans-serif
+  font-size 16px
+  height 60px
+  text-align center
+  width 100%
+  z-index 90
+  .Menu-icon
+    .Menu-icon
+      &--search
+        fixed top 10px right 10px
+        height 40px
+        width 40px
+
 .Movies
   display flex
   flex-wrap wrap
   list-style none
   margin 0 auto
   padding 0
+  padding-top 170px
   position relative
   // width 90%
 
@@ -56,23 +85,104 @@ body
   width calc(50% - 24px)
   width -webkit-calc(50% - 24px)
   width -moz-calc(50% - 24px)
+  transition all .3s linear
   .Movie-avatar
     margin 0
     padding 0
     width 100%
-    &:hover
-      img
-        zoom 200%
     img
+      position initial
+      top 0
+      left 0
       width 100%
+      z-index 1
+      &:hover
+        position absolute
+        top -15px
+        left -15px
+        width 120%
+        z-index 2
 
 .u-movieModal
   display none
+  &.hidden
+    display none
+    opacity 0
+  &.view
+    background-color rgba(#ccc, .6)
+    display block
+    fixed top 0 bottom 0 left 0 right 0
+    width 100%
+    opacity 1
+    z-index 100
+    .container
+      background-color #fff
+      position relative !important
+      min-height 100vh
+
+.Movie-body
+  overflow-y scroll
+.Movie-img
+  // fixed top 0 left 0 right 0
+  min-height 300px
+  max-height 300px
+  // height auto
+  margin 0 auto
+  min-width 100%
+  width auto
+
+@media screen and (min-width: 425px) and (max-width: 767px)
+  .Movie
+    margin 10px auto
+    margin-left 9%
+    max-width 170px
+    width 40%
+    &:nth-child(2n+2)
+      margin-left auto
+      margin-right 9%
+
+@media screen and (min-width: 624px) and (max-width: 767px)
+  .Movie
+    margin-left 12%
+    &:nth-child(2n-2)
+      margin-right 12%
+
+@media screen and (min-width: 768px) and (max-width: 1023px)
+  .Movie
+    margin 10px auto
+    width 30%
+    max-width 150px
+    // &:first-child
+    &:nth-child(3n+1)
+      margin-left 5%
+    &:nth-child(3n+2)
+      margin 10px 0
+    &:nth-child(3n+3)
+      margin-right 5%
 
 @media screen and (min-width: 1024px)
   .container
     max-width 900px
+  .Movie
+    margin 15px auto
+    max-width 150px
+    width 20%
+    // &:first-child
+    &:nth-child(4n+1)
+      margin-left 10%
+    &:nth-child(4n+4)
+      margin-right 10%
+    &:last-child:not(:nth-child(4n+4))
+      margin-right 10%
 
 @media screen and (min-width: 1440px)
   .container
     max-width 1200px
+  .Movie
+    margin 15px auto
+    max-width 150px
+    width 20%
+    &:nth-child(4n+1)
+      margin-left 10%
+    &:nth-child(4n+4)
+      margin-right 10%

@@ -14,7 +14,7 @@ Por ejemplo: Facebook, last.fm, instagram, github, marvel, etc.
  - Webpack
  - ECMAScript 6 con Babel
  - Seguir la guía de estilo de JS de AirBnB (https://github.com/airbnb/javascript/)
- - Configurar ESLint con la guía de estilos de AirBnB (que webpack corrar el linter antes de transpilar)
+ - Configurar ESLint con la guía de estilos de AirBnB (que webpack corra el linter antes de transpilar)
  - FlexboxGrid si necesita grillas (ni bootstrap ni foundation)
  - Internacionalización inglés + español
  - Subirla a Github y que le haga deploy para verla funcionando (puede usar Heroku o Zeit.co ya que va a necesitar un servidor para el server render)
