@@ -7,8 +7,8 @@ class Movies extends React.Component {
     this.state = {
       movies: [],
       search: 'robot',
-      full: 'http://api.tvmaze.com/shows',
-      url: 'http://api.tvmaze.com/search/shows?q=',
+      full: 'https://api.tvmaze.com/shows',
+      url: 'https://api.tvmaze.com/search/shows?q=',
     };
   }
   componentWillMount() {
