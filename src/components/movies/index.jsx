@@ -1,14 +1,16 @@
 import React from 'react';
 import MovieList from './movie-list/index.jsx';
 
+const translate = require('../translate');
+
 class Movies extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       movies: [],
       search: 'robot',
-      full: 'https://api.tvmaze.com/shows',
-      url: 'https://api.tvmaze.com/search/shows?q=',
+      full: 'http://api.tvmaze.com/shows',
+      url: 'http://api.tvmaze.com/search/shows?q=',
     };
   }
   componentWillMount() {
@@ -23,11 +25,12 @@ class Movies extends React.Component {
       });
   }
   render() {
+    // console.log(`${translate.message('search', 'search')}`)
     if (!this.state.movies.length) {
       return (
         <div className="container" id="chargingContainer">
           <div className="ChargingContainer">
-            <p className="ChargingContainer-span">Cargando peliculas...</p>
+            <p className="ChargingContainer-span">{translate.message('charging')}</p>
             <figure className="ChargingContainer-img">
               <img src="img/load2.gif" alt="Charging films" />
             </figure>
@@ -37,7 +40,7 @@ class Movies extends React.Component {
               if (document.getElementById('chargingContainer')) {
                 const chargingContainer = document.getElementById('chargingContainer');
                 chargingContainer.innerHTML = `<div class="ChargingContainer">
-                  <p class="ChargingContainer-span">Lo sentimos... no hay peliculas</p>
+                  <p class="ChargingContainer-span">${translate.message.notFilms}</p>
                   <figure class="ChargingContainer-img">
                     <img height="200" src="http://media0.giphy.com/media/l41lGxxaSgnMk7rIA/giphy.gif" />
                   </figure>
@@ -64,7 +67,7 @@ class Movies extends React.Component {
           }}
         >
           <h4 style={{ fontFamily: 'Open Sans', color: '#fff', fontSize: '20px' }} >
-            Resultados para:
+            {translate.message('search')}
             <span style={{ fontFamily: 'Dosis', textDecoration: 'underline', paddingLeft: '5px' }}>
               { this.state.search.toUpperCase() }
             </span>

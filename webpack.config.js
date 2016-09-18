@@ -13,9 +13,9 @@ var config = {
     filename: 'app.js',
   },
   module: {
-    preLoaders: [{
-      test: /\.jsx$/, loader: "eslint-loader", exclude: ['/node_modules/', '/public/src/']
-    }],
+    // preLoaders: [{
+    //   test: /\.jsx$/, loader: "eslint-loader", exclude: ['/node_modules/', '/public/src/']
+    // }],
     loaders: [
       {
         test: /\.jsx?/,
