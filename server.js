@@ -5,7 +5,7 @@ require('node-jsx').install({ harmony: true })
 const express = require('express')
 const reactEngine = require('react-engine')
 const app = express()
-const port = process.env.PORT || 3333
+const port = process.env.PORT || 4444
 
 const engine = reactEngine.server.create()
 app.set('views', __dirname + '/views')
