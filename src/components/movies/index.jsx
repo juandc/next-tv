@@ -26,8 +26,8 @@ class Movies extends React.Component {
   render() {
     if (!this.state.movies.length) {
       return (
-        <div className="container" id="chargingContainer">
-          <div className="ChargingContainer">
+        <div className="container">
+          <div className="ChargingContainer" id="chargingContainer">
             <p className="ChargingContainer-span">{translate.message('charging')}</p>
             <figure className="ChargingContainer-img">
               <img src="img/load2.gif" alt="Charging films" />
@@ -46,6 +46,10 @@ class Movies extends React.Component {
               }
             }, 4000)
           };
+          <div style={{ position: 'absolute', top: '90px' }}>
+           <label htmlFor="search"> Search movies: </label>
+           <input type="text" name="search" defaultValue={this.state.search} onChange={this.handleChange} />
+          </div>
         </div>
       );
     }
@@ -80,8 +84,8 @@ class Movies extends React.Component {
         })() }
         <MovieList list={this.state.movies} />
         <div style={{ position: 'absolute', top: '90px' }}>
-          <label htmlFor="search"> Search movies: </label>
-          <input type="text" name="search" defaultValue={this.state.search} onChange={this.handleChange} />
+         <label htmlFor="search"> Search movies: </label>
+         <input type="text" name="search" defaultValue={this.state.search} onChange={this.handleChange} />
         </div>
       </div>
     );

@@ -24743,10 +24743,10 @@
 	      if (!this.state.movies.length) {
 	        return _react2.default.createElement(
 	          'div',
-	          { className: 'container', id: 'chargingContainer' },
+	          { className: 'container' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'ChargingContainer' },
+	            { className: 'ChargingContainer', id: 'chargingContainer' },
 	            _react2.default.createElement(
 	              'p',
 	              { className: 'ChargingContainer-span' },
@@ -24764,7 +24764,17 @@
 	              chargingContainer.innerHTML = '<div class="ChargingContainer">\n                  <p class="ChargingContainer-span">' + translate.message.notFilms + '</p>\n                  <figure class="ChargingContainer-img">\n                    <img height="200" src="http://media0.giphy.com/media/l41lGxxaSgnMk7rIA/giphy.gif" />\n                  </figure>\n                </div>';
 	            }
 	          }, 4000),
-	          ';'
+	          ';',
+	          _react2.default.createElement(
+	            'div',
+	            { style: { position: 'absolute', top: '90px' } },
+	            _react2.default.createElement(
+	              'label',
+	              { htmlFor: 'search' },
+	              ' Search movies: '
+	            ),
+	            _react2.default.createElement('input', { type: 'text', name: 'search', defaultValue: this.state.search, onChange: this.handleChange })
+	          )
 	        );
 	      }
 	      return _react2.default.createElement(
