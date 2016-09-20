@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieList from './movie-list/index.jsx';
+import SearchInput from './search-input/index.jsx';
 
 const translate = require('../translate');
 
@@ -8,24 +9,21 @@ class Movies extends React.Component {
     super(props);
     this.state = {
       movies: [],
-      search: 'robot',
+      search: '',
       full: 'http://api.tvmaze.com/shows',
       url: 'http://api.tvmaze.com/search/shows?q=',
     };
+    this.handleChange = this.handleChange.bind(this);
+    // this.searchMovies = this.searchMovies.bind(this);
   }
   componentWillMount() {
-    const api = this.state.search !== '' ? `${this.state.url}${this.state.search}` : this.state.full;
-    console.log(`Api: ${api} \n Url: ${this.state.url} \n Search word is: ${this.state.search}`);
-    fetch(api)
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => {
-        this.setState({ movies: res });
-      });
+    searchMovies(this)
+  }
+  handleChange(e) {
+    this.setState({search: e.target.value});
+    searchMovies(this)
   }
   render() {
-    // console.log(`${translate.message('search', 'search')}`)
     if (!this.state.movies.length) {
       return (
         <div className="container" id="chargingContainer">
@@ -53,30 +51,53 @@ class Movies extends React.Component {
     }
     return (
       <div className="container">
-        <div
-          style={{
-            background: '#22A7F0',
-            position: 'absolute',
-            left: '10%',
-            top: '82px',
-            width: '80%',
-            height: '70px',
-            display: 'flex',
-            alignItems: 'center',
-            padding: '0 10px',
-          }}
-        >
-          <h4 style={{ fontFamily: 'Open Sans', color: '#fff', fontSize: '20px' }} >
-            {translate.message('search')}
-            <span style={{ fontFamily: 'Dosis', textDecoration: 'underline', paddingLeft: '5px' }}>
-              { this.state.search.toUpperCase() }
-            </span>
-          </h4>
-        </div>
+        { (() => {
+          if (this.state.search) {
+            return (
+              <div
+                style={{
+                  background: '#22A7F0',
+                  position: 'absolute',
+                  left: '10%',
+                  top: '82px',
+                  width: '80%',
+                  height: '70px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  padding: '0 10px',
+                  fontFamily: 'Open Sans', color: '#fff', fontSize: '20px'
+                }}
+              >
+                <h4>
+                  {translate.message('search')}
+                  <span style={{ fontFamily: 'Dosis', textDecoration: 'underline', paddingLeft: '5px' }}>
+                    {this.state.search.toUpperCase()}
+                  </span>
+                </h4>
+              </div>
+            )
+          }
+        })() }
         <MovieList list={this.state.movies} />
+        <div style={{ position: 'absolute', top: '90px' }}>
+          <label htmlFor="search"> Search movies: </label>
+          <input type="text" name="search" defaultValue={this.state.search} onChange={this.handleChange} />
+        </div>
       </div>
     );
   }
+}
+
+function searchMovies (obj) {
+  const api = obj.state.search !== '' ? `${obj.state.url}${obj.state.search}` : obj.state.full;
+  console.log(`Api: ${api} \n Url: ${obj.state.url} \n Search word is: ${obj.state.search}`);
+  fetch(api)
+    .then((res) => {
+      return res.json();
+    })
+    .then((res) => {
+      obj.setState({ movies: res });
+    });
 }
 
 export default Movies;
