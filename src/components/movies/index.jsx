@@ -14,16 +14,21 @@ class Movies extends React.Component {
       url: 'http://api.tvmaze.com/search/shows?q=',
     };
     this.handleChange = this.handleChange.bind(this);
-    // this.searchMovies = this.searchMovies.bind(this);
   }
   componentWillMount() {
     searchMovies(this)
   }
   handleChange(e) {
-    this.setState({search: e.target.value});
-    searchMovies(this)
+    if (e.key === 'Enter') {
+      const search = e.target.value
+      this.setState({search: e.target.value});
+      console.log(this.state.search)
+      searchMovies(this);
+      console.log(this.state.search)
+    }
   }
   render() {
+    let msg = this.state.search ? this.state.search : '...';
     if (!this.state.movies.length) {
       return (
         <div className="container">
@@ -34,11 +39,11 @@ class Movies extends React.Component {
             </figure>
           </div>
           {
-            setInterval(function chargeContainer() {
+            setTimeout(function chargeContainer() {
               if (document.getElementById('chargingContainer')) {
                 const chargingContainer = document.getElementById('chargingContainer');
                 chargingContainer.innerHTML = `<div class="ChargingContainer">
-                  <p class="ChargingContainer-span">${translate.message.notFilms}</p>
+                  <p class="ChargingContainer-span">${translate.message('notFilms')}</p>
                   <figure class="ChargingContainer-img">
                     <img height="200" src="http://media0.giphy.com/media/l41lGxxaSgnMk7rIA/giphy.gif" />
                   </figure>
@@ -46,46 +51,28 @@ class Movies extends React.Component {
               }
             }, 4000)
           };
-          <div style={{ position: 'absolute', top: '90px' }}>
-           <label htmlFor="search"> Search movies: </label>
-           <input type="text" name="search" defaultValue={this.state.search} onChange={this.handleChange} />
+          <div className="SearchForm" >
+            <label htmlFor="search">Search movies: </label>
+            <input type="text" name="search" id="search-input" defaultValue={this.state.search} onKeyPress={this.handleChange} />
           </div>
         </div>
       );
     }
     return (
       <div className="container">
-        { (() => {
-          if (this.state.search) {
-            return (
-              <div
-                style={{
-                  background: '#22A7F0',
-                  position: 'absolute',
-                  left: '10%',
-                  top: '82px',
-                  width: '80%',
-                  height: '70px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  padding: '0 10px',
-                  fontFamily: 'Open Sans', color: '#fff', fontSize: '20px'
-                }}
-              >
-                <h4>
-                  {translate.message('search')}
-                  <span style={{ fontFamily: 'Dosis', textDecoration: 'underline', paddingLeft: '5px' }}>
-                    {this.state.search.toUpperCase()}
-                  </span>
-                </h4>
-              </div>
-            )
-          }
-        })() }
+        <div className="SearchBox">
+          <h4>
+            {translate.message('search')}
+            <span className="searchWorld">
+              {msg.toUpperCase()}
+            </span>
+          </h4>
+        </div>
         <MovieList list={this.state.movies} />
-        <div style={{ position: 'absolute', top: '90px' }}>
-         <label htmlFor="search"> Search movies: </label>
-         <input type="text" name="search" defaultValue={this.state.search} onChange={this.handleChange} />
+        <div className="SearchForm" >
+         <label htmlFor="search">Search movies: </label>
+         <input type="text" name="search" id="search-input" defaultValue={this.state.search} onKeyPress={this.handleChange} />
+         <button type="submit">Search</button>
         </div>
       </div>
     );

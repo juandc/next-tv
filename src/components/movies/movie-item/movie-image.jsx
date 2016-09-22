@@ -4,7 +4,7 @@ function MovieImage({ title, picture }) {
   return (
     <figure className="Movie-avatar">
       <img
-        width="170"
+        width="300"
         title={title}
         alt={title}
         src={picture}
