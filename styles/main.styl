@@ -82,7 +82,7 @@ body
   list-style none
   margin 0 auto
   padding 0
-  padding-top 170px
+  padding-top 280px
   position relative
   // width 90%
 
@@ -98,6 +98,7 @@ body
     padding 0
     width 100%
     img
+      border-radius 2px
       position initial
       top 0
       left 0
@@ -112,7 +113,32 @@ body
 
 .SearchForm
   position absolute
-  top 85px
+  font-family 'Open Sans', Arial, "Helvetica Neue", Helvetica, sans-serif
+  font-size 14px
+  font-weight: 700;
+  top 90px
+  left 10px
+  right 10px
+  width 90%
+  &--charging
+    position relative
+    order -1
+    margin-bottom 100px
+  label
+    font-size: 12px;
+    color: #979995;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  input
+    border 1px solid #ccc
+    border-radius 4px
+    color #444
+    height 38px
+    font-family 'Open Sans', Arial, "Helvetica Neue", Helvetica, sans-serif
+    font-weight bold
+    line-height 1.4
+    padding 6px 14px
+    width 100%
 
 .SearchBox
   background #22A7F0
@@ -125,35 +151,34 @@ body
   left 10%
   padding 0 10px
   position absolute
-  top 82px
+  top 180px
   width 80%
 
-.searchWorld
+.searchWord
   font-family 'Dosis', Arial, "Helvetica Neue", Helvetica, sans-serif
   text-decoration underline
   padding-left 5px
 
 .u-dropdown
-  absolute top 64px left 10px
-  color blue
+  absolute top 2px left 10px
+  color #FFF
   font-weight bold
-  display none
-  opacity 0
   .Dropdown
-    background-color #fff
+    background-color #EC644B
     height 60px
     position relative
     padding 0
     list-style none
     li
+      cursor pointer
       text-align center
       height 50%
       padding 7px 10px
       width 100%
       vertical-align middle
       &:hover
-        background-color #EC644B
-        color #FFF
+        background-color #FFF
+        color #EC644B
 
 .u-movieModal
   display none

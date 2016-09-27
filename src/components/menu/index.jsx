@@ -17,8 +17,8 @@ function Menu() {
         </div>
         <div className="u-dropdown">
           <ul className="Dropdown">
-            <li>Español</li>
-            <li>Ingles</li>
+            <li onClick={lang.bind(null, 'en-US')}>{translate.message('en-US')}</li>
+            <li onClick={lang.bind(null, 'es')}>{translate.message('es')}</li>
           </ul>
         </div>
       </div>
@@ -27,8 +27,14 @@ function Menu() {
 }
 
 function lang(locale) {
-  localeStorage.locale = locale;
-  location.reload;
+  // var isNode = typeof module !== 'undefined'
+  // if(typeof(Storage) !== "undefined"){
+  //   localStorage.locale = locale;
+  //   location.reload;
+  // }
+  localStorage.locale = locale;
+  window.location.reload(false);
+  console.log('drtghj')
 }
 
 export default Menu;
