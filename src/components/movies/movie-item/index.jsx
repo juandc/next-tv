@@ -5,7 +5,7 @@ import React from 'react';
 import MovieImage from './movie-image.jsx';
 
 function MovieItem({ movie }) {
-  const pic = movie.image ? JSON.stringify(movie.image.medium).split('"').join('') : 'https://www.raceentry.com/img/Race-Registration-Image-Not-Found.png';
+  const pic = movie.image ? JSON.stringify(movie.image.medium).split('"').join('') : 'https://thebislondon.files.wordpress.com/2015/09/excuse-me-im-sorry.jpg?w=764';
   const md = new Remarkable();
   md.renderer = new RemarkableReactRenderer();
   const des = md.render(html2markdown(movie.summary));

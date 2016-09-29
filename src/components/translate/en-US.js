@@ -1,6 +1,6 @@
 module.exports = {
   search: 'Results for',
-  charging: 'Charging films',
+  charging: 'Loading films',
   notFilms: 'Sorry... there no films',
   es: 'Spanish',
   'en-US': 'English'

@@ -106,22 +106,4 @@ class Movies extends React.Component {
   }
 }
 
-// function searchMovies (obj) {
-//   const search = obj.state.search
-//   let api = obj.state.full
-//   if (search !== '' && search !== ' ') {
-//     api = `${obj.state.url}${obj.state.search}`
-//   } else {
-//     api = obj.state.full
-//   }
-//   console.log(`Api: ${api} \n Url: ${obj.state.url} \n Search word is: ${obj.state.search == ' ' ? 'space' : obj.state.search }`);
-//   fetch(api)
-//     .then((res) => {
-//       return res.json();
-//     })
-//     .then((res) => {
-//       obj.setState({ movies: res });
-//     });
-// }
-
 export default Movies;
