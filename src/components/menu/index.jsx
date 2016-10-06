@@ -7,7 +7,9 @@ function Menu() {
     <nav className="Menu" id="menu">
       <div className="container">
         <figure className="Menu-logo">
-          <h2>Next TV</h2>
+          <a className="Menu-logo" href="/">
+            <h2>Next TV</h2>
+          </a>
         </figure>
         <div className="Menu-icon Menu-icon--lang">
           <i className="fa fa-bars" />

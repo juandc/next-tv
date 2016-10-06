@@ -18,8 +18,10 @@ const Template = React.createClass({
         </head>
         <body>
           <div id="content"></div>
-          <script src="src/app.js"></script>
-          <script src="src/modal.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+          <script src="/src/app.js"></script>
         </body>
       </html>
     )

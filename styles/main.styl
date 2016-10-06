@@ -4,6 +4,31 @@
   box-sizing border-box
   transition all .1s linear
 
+::selection
+  background-color #EC644B
+  font-weight bold
+  color #FFF
+
+::-webkit-scrollbar
+  width 13px
+  background #536363
+  padding 10px 0
+
+::-webkit-scrollbar-thumb
+  background #747474
+  border-radius 10px
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+  min-height 50px
+
+::-webkit-scrollbar-track
+  background: #2c2c2c
+  border-radius 10px
+  -webkit-box-shadow inset 0 0 6px rgba(0,0,0,0.3)
+
+::-webkit-scrollbar-button
+  height 4px
+  background-color transparent
+
 html
 body
   background-color #fff
@@ -63,6 +88,9 @@ body
   z-index 90
   .container
     position relative
+  &-logo
+    color #FFF
+    text-decoration none
   &-icon
     absolute top 30px right 10px
     font-size 30px
@@ -98,9 +126,12 @@ body
     width -webkit-calc(80% - 24px)
     width -moz-calc(80% - 24px)
     max-width 100%
+  &:last-child
     .Movie-avatar
       img
         position relative !important
+  &:nth-last-child(2):first-child:hover .Movie-avatar img
+    position relative !important
   .Movie-avatar
     margin 0
     padding 0
@@ -123,7 +154,7 @@ body
   position absolute
   font-family 'Open Sans', Arial, "Helvetica Neue", Helvetica, sans-serif
   font-size 14px
-  font-weight: 700;
+  font-weight: 700
   margin 0 auto
   top 90px
   left 10px
@@ -134,10 +165,10 @@ body
     order -1
     margin-bottom 100px
   label
-    font-size: 12px;
-    color: #979995;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 12px
+    color: #979995
+    text-transform: uppercase
+    letter-spacing: 1px
   input
     border 1px solid #ccc
     border-radius 2px
@@ -190,22 +221,102 @@ body
         background-color #FFF
         color #EC644B
 
-.u-movieModal
+.modal
+  background-color #fafafa
+  border-radius 2px
+  bottom 10%
   display none
-  &.hidden
-    display none
-    opacity 0
-  &.view
-    background-color rgba(#ccc, .6)
-    display block
-    fixed top 0 bottom 0 left 0 right 0
+  left 0
+  margin auto
+  max-height 70%
+  overflow-y auto
+  padding 0
+  position fixed
+  top 10%
+  right 0
+  width 55%
+  will-change top, opacity
+  &.modal-fixed-footer
+    padding 0
+    height 70%
+  &.modal-fixed-footer .modal-content
+    position absolute
+    height calc(100% - 56px)
+    max-height 100%
     width 100%
-    opacity 1
-    z-index 100
-    .container
-      background-color #fff
-      position relative !important
-      min-height 100vh
+    overflow-y auto
+  &.modal-fixed-footer .modal-footer
+    border-top 1px solid rgba(0, 0, 0, 0.1)
+    position absolute
+    bottom 0
+  &.modal-fixed-footer .modal-content
+    position absolute
+    height calc(100% - 56px)
+    max-height 100%
+    width 100%
+    overflow-y auto
+  &.modal-fixed-footer .modal-footer
+    border-top 1px solid rgba(0, 0, 0, 0.1)
+    position absolute
+    bottom 0
+  &.bottom-sheet
+    top auto
+    bottom -100%
+    margin 0
+    width 100%
+    max-height 45%
+    border-radius 0
+    will-change bottom, opacity
+  h1, h2, h3, h4
+    margin-top 0
+  .modal-content
+    background-position center
+    background-size cover
+    background-repeat no-repeat
+    padding 24px
+    .modal-cont
+      background rgba(white, .8)
+      padding 5px
+      h2
+        font-family 'Dosis'
+      p
+        font-family 'Open Sans'
+  .modal-close
+    cursor pointer
+  .modal-footer
+    background-color #fafafa
+    border-radius 0 0 2px 2px
+    padding 4px 6px
+    height 56px
+    width 100%
+  .modal-footer .btn,
+  .modal-footer .btn-large,
+  .modal-footer .btn-flat
+    background-color red
+    border-radius 8px
+    color #FFF
+    float right
+    font-family Arial, "Helvetica Neue", Helvetica, sans-serif
+    font-weight bold
+    height 30px
+    margin 8px
+    padding 5px 25px
+    text-align center
+    text-decoration none
+    width 150px
+
+.lean-overlay
+  position fixed
+  z-index 999
+  top -100px
+  left 0
+  bottom 0
+  right 0
+  height 125%
+  width 100%
+  background #000
+  display none
+  will-change opacity
 
 .Movie-body
   overflow-y scroll
@@ -216,6 +327,10 @@ body
   margin 0 auto
   min-width 100%
   width auto
+
+@media screen and (max-width: 500px)
+  .modal
+    width 70%
 
 @media screen and (min-width: 425px) and (max-width: 767px)
   .Movie
@@ -238,6 +353,8 @@ body
       padding 0
     &:nth-child(2n-2)
       margin-right 12%
+    &:nth-last-child(2)
+      margin auto !important
 
 @media screen and (min-width: 768px) and (max-width: 1023px)
   .Movie
@@ -247,6 +364,10 @@ body
     &:only-child
       max-width 100%
       padding 0
+    &:nth-last-child(2):first-child
+      max-width 40%
+      width auto
+      padding 0
     &:nth-child(3n+1)
       margin-left 5%
     &:nth-child(3n+2)
@@ -255,6 +376,8 @@ body
       margin-right 5%
 
 @media screen and (min-width: 1024px)
+  .modal
+    width 80%
   .container
     max-width 900px
   .Movie

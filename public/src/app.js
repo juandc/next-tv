@@ -61,7 +61,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(/*! ../styles/main.styl */ 332);
+	__webpack_require__(/*! ../styles/main.styl */ 269);
 	
 	(0, _reactDom.render)(_react2.default.createElement(_template2.default, null), document.getElementById('content'));
 
@@ -21974,7 +21974,27 @@
 	
 	var _index4 = _interopRequireDefault(_index3);
 	
+	var _page = __webpack_require__(/*! page */ 266);
+	
+	var _page2 = _interopRequireDefault(_page);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// $(document).ready(function(){
+	//   $('.modal-trigger').leanModal();
+	//   page('/', function (ctx, res) {
+	//     $('#modal').closeModal()
+	//   })
+	//   page('/movies/:id', function (ctx, res) {
+	//     $(`#modal${ctx.params.id}`).openModal({
+	//       complete: function() {
+	//         page('/')
+	//       }
+	//     })
+	//   })
+	//   page()
+	// });
+	
 	
 	function Template() {
 	  return _react2.default.createElement(
@@ -22019,9 +22039,13 @@
 	        'figure',
 	        { className: 'Menu-logo' },
 	        _react2.default.createElement(
-	          'h2',
-	          null,
-	          'Next TV'
+	          'a',
+	          { className: 'Menu-logo', href: '/' },
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'Next TV'
+	          )
 	        )
 	      ),
 	      _react2.default.createElement(
@@ -24693,9 +24717,9 @@
 	
 	var _index2 = _interopRequireDefault(_index);
 	
-	var _index3 = __webpack_require__(/*! ./search-input/index.jsx */ 331);
+	var _page = __webpack_require__(/*! page */ 266);
 	
-	var _index4 = _interopRequireDefault(_index3);
+	var _page2 = _interopRequireDefault(_page);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -24731,10 +24755,28 @@
 	      this.fetchMovies();
 	    }
 	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      $(document).ready(function () {
+	        $('.modal-trigger').leanModal();
+	        (0, _page2.default)('/', function (ctx, res) {
+	          $('#modal').closeModal();
+	        });
+	        (0, _page2.default)('/movies/:id', function (ctx, res) {
+	          $('#modal' + ctx.params.id).openModal({
+	            complete: function complete() {
+	              (0, _page2.default)('/');
+	            }
+	          });
+	        });
+	        (0, _page2.default)();
+	      });
+	    }
+	  }, {
 	    key: 'handleChangeInForm',
 	    value: function handleChangeInForm(e) {
 	      // this.searchMovies(this.refs)
-	      console.log(this.refs);
+	      // console.log(this.refs)
 	      return false;
 	    }
 	  }, {
@@ -24765,7 +24807,11 @@
 	        api = this.state.full;
 	      }
 	
-	      console.log('Api: ' + api + ' \n\n      Url: ' + this.state.url + ' \n\n      Search state word is: ' + (this.state.search == ' ' ? 'space' : this.state.search));
+	      // console.log(
+	      //   `Api: ${api} \n
+	      //   Url: ${this.state.url} \n
+	      //   Search state word is: ${this.state.search == ' ' ? 'space' : this.state.search }`
+	      // );
 	
 	      fetch(api).then(function (res) {
 	        return res.json();
@@ -24802,7 +24848,7 @@
 	            _react2.default.createElement(
 	              'figure',
 	              { className: 'ChargingContainer-img' },
-	              _react2.default.createElement('img', { src: 'img/load2.gif', alt: 'Charging films' })
+	              _react2.default.createElement('img', { src: '\\img\\load2.gif', alt: 'Charging films' })
 	            )
 	          ),
 	          setTimeout(function chargeContainer() {
@@ -24868,7 +24914,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _index = __webpack_require__(/*! ../movie-item/index.jsx */ 260);
+	var _index = __webpack_require__(/*! ../movie-item/index.jsx */ 196);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
@@ -24892,71 +24938,7 @@
 	exports.default = MovieList;
 
 /***/ },
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */,
-/* 219 */,
-/* 220 */,
-/* 221 */,
-/* 222 */,
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */
+/* 196 */
 /*!****************************************************!*\
   !*** ./src/components/movies/movie-item/index.jsx ***!
   \****************************************************/
@@ -24968,15 +24950,15 @@
 	  value: true
 	});
 	
-	var _html2markdown = __webpack_require__(/*! html2markdown */ 261);
+	var _html2markdown = __webpack_require__(/*! html2markdown */ 197);
 	
 	var _html2markdown2 = _interopRequireDefault(_html2markdown);
 	
-	var _remarkable = __webpack_require__(/*! remarkable */ 264);
+	var _remarkable = __webpack_require__(/*! remarkable */ 200);
 	
 	var _remarkable2 = _interopRequireDefault(_remarkable);
 	
-	var _remarkableReact = __webpack_require__(/*! remarkable-react */ 325);
+	var _remarkableReact = __webpack_require__(/*! remarkable-react */ 261);
 	
 	var _remarkableReact2 = _interopRequireDefault(_remarkableReact);
 	
@@ -24984,7 +24966,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _movieImage = __webpack_require__(/*! ./movie-image.jsx */ 329);
+	var _movieImage = __webpack_require__(/*! ./movie-image.jsx */ 265);
 	
 	var _movieImage2 = _interopRequireDefault(_movieImage);
 	
@@ -24994,47 +24976,49 @@
 	  var movie = _ref.movie;
 	
 	  var pic = movie.image ? JSON.stringify(movie.image.medium).split('"').join('') : 'https://thebislondon.files.wordpress.com/2015/09/excuse-me-im-sorry.jpg?w=764';
+	  var styles = {
+	    backgroundImage: 'url(' + pic + ')'
+	  };
 	  var md = new _remarkable2.default();
 	  md.renderer = new _remarkableReact2.default();
 	  var des = md.render((0, _html2markdown2.default)(movie.summary));
+	
 	  return _react2.default.createElement(
 	    'li',
 	    { className: 'Movie' },
-	    _react2.default.createElement(_movieImage2.default, { title: movie.name, picture: pic }),
+	    _react2.default.createElement(
+	      'a',
+	      { href: '/movies/' + movie.id },
+	      _react2.default.createElement(_movieImage2.default, { title: movie.name, picture: pic })
+	    ),
 	    _react2.default.createElement(
 	      'div',
-	      { className: 'u-movieModal hidden' },
+	      { id: 'modal' + movie.id, className: 'modal modal-fixed-footer' },
 	      _react2.default.createElement(
 	        'div',
-	        { className: 'container' },
-	        _react2.default.createElement('img', { className: 'Movie-img', src: pic, alt: movie.name }),
+	        { className: 'modal-content', style: styles },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'Movie-body' },
+	          { className: 'modal-cont' },
 	          _react2.default.createElement(
-	            'h4',
-	            { className: 'Movie-title' },
+	            'h2',
+	            null,
 	            movie.name
 	          ),
 	          _react2.default.createElement(
-	            'span',
-	            { className: 'Movie-span Movie-span--type' },
-	            movie.type
-	          ),
-	          _react2.default.createElement(
-	            'article',
-	            { className: 'Movie-span Movie-span--description' },
+	            'div',
+	            null,
 	            des
-	          ),
-	          _react2.default.createElement(
-	            'a',
-	            {
-	              className: 'Movie-span Movie-span--link',
-	              target: '_blanck',
-	              href: movie.url
-	            },
-	            'Vér la pelicula'
 	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'modal-footer' },
+	        _react2.default.createElement(
+	          'a',
+	          { href: movie.url, target: '_banck', className: 'modal-action modal-close btn' },
+	          'Ver pelicula'
 	        )
 	      )
 	    )
@@ -25042,16 +25026,34 @@
 	}
 	
 	exports.default = MovieItem;
+	
+	// <div className="u-movieModal hidden">
+	// <div className="container">
+	//   <img className="Movie-img" src={pic} alt={movie.name} />
+	//   <div className="Movie-body">
+	//     <h4 className="Movie-title" >{movie.name}</h4>
+	//     <span className="Movie-span Movie-span--type">{movie.type}</span>
+	//     <article className="Movie-span Movie-span--description">{des}</article>
+	//     <a
+	//       className="Movie-span Movie-span--link"
+	//       target="_blanck"
+	//       href={movie.url}
+	//     >
+	//       Vér la pelicula
+	//     </a>
+	//   </div>
+	// </div>
+	// </div>
 
 /***/ },
-/* 261 */
+/* 197 */
 /*!**********************************!*\
   !*** ./~/html2markdown/index.js ***!
   \**********************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	var html2markdown = __webpack_require__(/*! ./html2markdown */ 262);
-	var htmlParser = __webpack_require__(/*! ./markdown_html_parser */ 263);
+	var html2markdown = __webpack_require__(/*! ./html2markdown */ 198);
+	var htmlParser = __webpack_require__(/*! ./markdown_html_parser */ 199);
 	
 	module.exports = function(html, opts) {
 	  opts = opts || {};
@@ -25061,7 +25063,7 @@
 
 
 /***/ },
-/* 262 */
+/* 198 */
 /*!******************************************!*\
   !*** ./~/html2markdown/html2markdown.js ***!
   \******************************************/
@@ -25632,7 +25634,7 @@
 	});
 
 /***/ },
-/* 263 */
+/* 199 */
 /*!*************************************************!*\
   !*** ./~/html2markdown/markdown_html_parser.js ***!
   \*************************************************/
@@ -25970,7 +25972,7 @@
 	});
 
 /***/ },
-/* 264 */
+/* 200 */
 /*!*******************************!*\
   !*** ./~/remarkable/index.js ***!
   \*******************************/
@@ -25979,11 +25981,11 @@
 	'use strict';
 	
 	
-	module.exports = __webpack_require__(/*! ./lib/ */ 265);
+	module.exports = __webpack_require__(/*! ./lib/ */ 201);
 
 
 /***/ },
-/* 265 */
+/* 201 */
 /*!***********************************!*\
   !*** ./~/remarkable/lib/index.js ***!
   \***********************************/
@@ -25995,21 +25997,21 @@
 	 * Local dependencies
 	 */
 	
-	var assign       = __webpack_require__(/*! ./common/utils */ 266).assign;
-	var Renderer     = __webpack_require__(/*! ./renderer */ 268);
-	var ParserCore   = __webpack_require__(/*! ./parser_core */ 270);
-	var ParserBlock  = __webpack_require__(/*! ./parser_block */ 288);
-	var ParserInline = __webpack_require__(/*! ./parser_inline */ 303);
-	var Ruler        = __webpack_require__(/*! ./ruler */ 271);
+	var assign       = __webpack_require__(/*! ./common/utils */ 202).assign;
+	var Renderer     = __webpack_require__(/*! ./renderer */ 204);
+	var ParserCore   = __webpack_require__(/*! ./parser_core */ 206);
+	var ParserBlock  = __webpack_require__(/*! ./parser_block */ 224);
+	var ParserInline = __webpack_require__(/*! ./parser_inline */ 239);
+	var Ruler        = __webpack_require__(/*! ./ruler */ 207);
 	
 	/**
 	 * Preset configs
 	 */
 	
 	var config = {
-	  'default':    __webpack_require__(/*! ./configs/default */ 322),
-	  'full':       __webpack_require__(/*! ./configs/full */ 323),
-	  'commonmark': __webpack_require__(/*! ./configs/commonmark */ 324)
+	  'default':    __webpack_require__(/*! ./configs/default */ 258),
+	  'full':       __webpack_require__(/*! ./configs/full */ 259),
+	  'commonmark': __webpack_require__(/*! ./configs/commonmark */ 260)
 	};
 	
 	/**
@@ -26183,11 +26185,11 @@
 	 * rendering.
 	 */
 	
-	module.exports.utils = __webpack_require__(/*! ./common/utils */ 266);
+	module.exports.utils = __webpack_require__(/*! ./common/utils */ 202);
 
 
 /***/ },
-/* 266 */
+/* 202 */
 /*!******************************************!*\
   !*** ./~/remarkable/lib/common/utils.js ***!
   \******************************************/
@@ -26277,7 +26279,7 @@
 	
 	var NAMED_ENTITY_RE   = /&([a-z#][a-z0-9]{1,31});/gi;
 	var DIGITAL_ENTITY_TEST_RE = /^#((?:x[a-f0-9]{1,8}|[0-9]{1,8}))/i;
-	var entities = __webpack_require__(/*! ./entities */ 267);
+	var entities = __webpack_require__(/*! ./entities */ 203);
 	
 	function replaceEntityPattern(match, name) {
 	  var code = 0;
@@ -26337,7 +26339,7 @@
 
 
 /***/ },
-/* 267 */
+/* 203 */
 /*!*********************************************!*\
   !*** ./~/remarkable/lib/common/entities.js ***!
   \*********************************************/
@@ -28480,7 +28482,7 @@
 
 
 /***/ },
-/* 268 */
+/* 204 */
 /*!**************************************!*\
   !*** ./~/remarkable/lib/renderer.js ***!
   \**************************************/
@@ -28492,8 +28494,8 @@
 	 * Local dependencies
 	 */
 	
-	var utils = __webpack_require__(/*! ./common/utils */ 266);
-	var rules = __webpack_require__(/*! ./rules */ 269);
+	var utils = __webpack_require__(/*! ./common/utils */ 202);
+	var rules = __webpack_require__(/*! ./rules */ 205);
 	
 	/**
 	 * Expose `Renderer`
@@ -28564,7 +28566,7 @@
 
 
 /***/ },
-/* 269 */
+/* 205 */
 /*!***********************************!*\
   !*** ./~/remarkable/lib/rules.js ***!
   \***********************************/
@@ -28576,10 +28578,10 @@
 	 * Local dependencies
 	 */
 	
-	var has             = __webpack_require__(/*! ./common/utils */ 266).has;
-	var unescapeMd      = __webpack_require__(/*! ./common/utils */ 266).unescapeMd;
-	var replaceEntities = __webpack_require__(/*! ./common/utils */ 266).replaceEntities;
-	var escapeHtml      = __webpack_require__(/*! ./common/utils */ 266).escapeHtml;
+	var has             = __webpack_require__(/*! ./common/utils */ 202).has;
+	var unescapeMd      = __webpack_require__(/*! ./common/utils */ 202).unescapeMd;
+	var replaceEntities = __webpack_require__(/*! ./common/utils */ 202).replaceEntities;
+	var escapeHtml      = __webpack_require__(/*! ./common/utils */ 202).escapeHtml;
 	
 	/**
 	 * Renderer rules cache
@@ -29000,7 +29002,7 @@
 
 
 /***/ },
-/* 270 */
+/* 206 */
 /*!*****************************************!*\
   !*** ./~/remarkable/lib/parser_core.js ***!
   \*****************************************/
@@ -29012,22 +29014,22 @@
 	 * Local dependencies
 	 */
 	
-	var Ruler = __webpack_require__(/*! ./ruler */ 271);
+	var Ruler = __webpack_require__(/*! ./ruler */ 207);
 	
 	/**
 	 * Core parser `rules`
 	 */
 	
 	var _rules = [
-	  [ 'block',          __webpack_require__(/*! ./rules_core/block */ 272)          ],
-	  [ 'abbr',           __webpack_require__(/*! ./rules_core/abbr */ 273)           ],
-	  [ 'references',     __webpack_require__(/*! ./rules_core/references */ 276)     ],
-	  [ 'inline',         __webpack_require__(/*! ./rules_core/inline */ 281)         ],
-	  [ 'footnote_tail',  __webpack_require__(/*! ./rules_core/footnote_tail */ 282)  ],
-	  [ 'abbr2',          __webpack_require__(/*! ./rules_core/abbr2 */ 283)          ],
-	  [ 'replacements',   __webpack_require__(/*! ./rules_core/replacements */ 284)   ],
-	  [ 'smartquotes',    __webpack_require__(/*! ./rules_core/smartquotes */ 285)    ],
-	  [ 'linkify',        __webpack_require__(/*! ./rules_core/linkify */ 286)        ]
+	  [ 'block',          __webpack_require__(/*! ./rules_core/block */ 208)          ],
+	  [ 'abbr',           __webpack_require__(/*! ./rules_core/abbr */ 209)           ],
+	  [ 'references',     __webpack_require__(/*! ./rules_core/references */ 212)     ],
+	  [ 'inline',         __webpack_require__(/*! ./rules_core/inline */ 217)         ],
+	  [ 'footnote_tail',  __webpack_require__(/*! ./rules_core/footnote_tail */ 218)  ],
+	  [ 'abbr2',          __webpack_require__(/*! ./rules_core/abbr2 */ 219)          ],
+	  [ 'replacements',   __webpack_require__(/*! ./rules_core/replacements */ 220)   ],
+	  [ 'smartquotes',    __webpack_require__(/*! ./rules_core/smartquotes */ 221)    ],
+	  [ 'linkify',        __webpack_require__(/*! ./rules_core/linkify */ 222)        ]
 	];
 	
 	/**
@@ -29067,7 +29069,7 @@
 
 
 /***/ },
-/* 271 */
+/* 207 */
 /*!***********************************!*\
   !*** ./~/remarkable/lib/ruler.js ***!
   \***********************************/
@@ -29349,7 +29351,7 @@
 
 
 /***/ },
-/* 272 */
+/* 208 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_core/block.js ***!
   \**********************************************/
@@ -29375,7 +29377,7 @@
 
 
 /***/ },
-/* 273 */
+/* 209 */
 /*!*********************************************!*\
   !*** ./~/remarkable/lib/rules_core/abbr.js ***!
   \*********************************************/
@@ -29387,8 +29389,8 @@
 	'use strict';
 	
 	
-	var StateInline    = __webpack_require__(/*! ../rules_inline/state_inline */ 274);
-	var parseLinkLabel = __webpack_require__(/*! ../helpers/parse_link_label */ 275);
+	var StateInline    = __webpack_require__(/*! ../rules_inline/state_inline */ 210);
+	var parseLinkLabel = __webpack_require__(/*! ../helpers/parse_link_label */ 211);
 	
 	
 	function parseAbbr(str, parserInline, options, env) {
@@ -29454,7 +29456,7 @@
 
 
 /***/ },
-/* 274 */
+/* 210 */
 /*!*******************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/state_inline.js ***!
   \*******************************************************/
@@ -29545,7 +29547,7 @@
 
 
 /***/ },
-/* 275 */
+/* 211 */
 /*!******************************************************!*\
   !*** ./~/remarkable/lib/helpers/parse_link_label.js ***!
   \******************************************************/
@@ -29613,7 +29615,7 @@
 
 
 /***/ },
-/* 276 */
+/* 212 */
 /*!***************************************************!*\
   !*** ./~/remarkable/lib/rules_core/references.js ***!
   \***************************************************/
@@ -29622,11 +29624,11 @@
 	'use strict';
 	
 	
-	var StateInline          = __webpack_require__(/*! ../rules_inline/state_inline */ 274);
-	var parseLinkLabel       = __webpack_require__(/*! ../helpers/parse_link_label */ 275);
-	var parseLinkDestination = __webpack_require__(/*! ../helpers/parse_link_destination */ 277);
-	var parseLinkTitle       = __webpack_require__(/*! ../helpers/parse_link_title */ 279);
-	var normalizeReference   = __webpack_require__(/*! ../helpers/normalize_reference */ 280);
+	var StateInline          = __webpack_require__(/*! ../rules_inline/state_inline */ 210);
+	var parseLinkLabel       = __webpack_require__(/*! ../helpers/parse_link_label */ 211);
+	var parseLinkDestination = __webpack_require__(/*! ../helpers/parse_link_destination */ 213);
+	var parseLinkTitle       = __webpack_require__(/*! ../helpers/parse_link_title */ 215);
+	var normalizeReference   = __webpack_require__(/*! ../helpers/normalize_reference */ 216);
 	
 	
 	function parseReference(str, parser, options, env) {
@@ -29720,7 +29722,7 @@
 
 
 /***/ },
-/* 277 */
+/* 213 */
 /*!************************************************************!*\
   !*** ./~/remarkable/lib/helpers/parse_link_destination.js ***!
   \************************************************************/
@@ -29729,8 +29731,8 @@
 	'use strict';
 	
 	
-	var normalizeLink = __webpack_require__(/*! ./normalize_link */ 278);
-	var unescapeMd    = __webpack_require__(/*! ../common/utils */ 266).unescapeMd;
+	var normalizeLink = __webpack_require__(/*! ./normalize_link */ 214);
+	var unescapeMd    = __webpack_require__(/*! ../common/utils */ 202).unescapeMd;
 	
 	/**
 	 * Parse link destination
@@ -29812,7 +29814,7 @@
 
 
 /***/ },
-/* 278 */
+/* 214 */
 /*!****************************************************!*\
   !*** ./~/remarkable/lib/helpers/normalize_link.js ***!
   \****************************************************/
@@ -29820,7 +29822,7 @@
 
 	'use strict';
 	
-	var replaceEntities = __webpack_require__(/*! ../common/utils */ 266).replaceEntities;
+	var replaceEntities = __webpack_require__(/*! ../common/utils */ 202).replaceEntities;
 	
 	module.exports = function normalizeLink(url) {
 	  var normalized = replaceEntities(url);
@@ -29834,7 +29836,7 @@
 
 
 /***/ },
-/* 279 */
+/* 215 */
 /*!******************************************************!*\
   !*** ./~/remarkable/lib/helpers/parse_link_title.js ***!
   \******************************************************/
@@ -29843,7 +29845,7 @@
 	'use strict';
 	
 	
-	var unescapeMd = __webpack_require__(/*! ../common/utils */ 266).unescapeMd;
+	var unescapeMd = __webpack_require__(/*! ../common/utils */ 202).unescapeMd;
 	
 	/**
 	 * Parse link title
@@ -29889,7 +29891,7 @@
 
 
 /***/ },
-/* 280 */
+/* 216 */
 /*!*********************************************************!*\
   !*** ./~/remarkable/lib/helpers/normalize_reference.js ***!
   \*********************************************************/
@@ -29906,7 +29908,7 @@
 
 
 /***/ },
-/* 281 */
+/* 217 */
 /*!***********************************************!*\
   !*** ./~/remarkable/lib/rules_core/inline.js ***!
   \***********************************************/
@@ -29928,7 +29930,7 @@
 
 
 /***/ },
-/* 282 */
+/* 218 */
 /*!******************************************************!*\
   !*** ./~/remarkable/lib/rules_core/footnote_tail.js ***!
   \******************************************************/
@@ -30032,7 +30034,7 @@
 
 
 /***/ },
-/* 283 */
+/* 219 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_core/abbr2.js ***!
   \**********************************************/
@@ -30129,7 +30131,7 @@
 
 
 /***/ },
-/* 284 */
+/* 220 */
 /*!*****************************************************!*\
   !*** ./~/remarkable/lib/rules_core/replacements.js ***!
   \*****************************************************/
@@ -30202,7 +30204,7 @@
 
 
 /***/ },
-/* 285 */
+/* 221 */
 /*!****************************************************!*\
   !*** ./~/remarkable/lib/rules_core/smartquotes.js ***!
   \****************************************************/
@@ -30324,7 +30326,7 @@
 
 
 /***/ },
-/* 286 */
+/* 222 */
 /*!************************************************!*\
   !*** ./~/remarkable/lib/rules_core/linkify.js ***!
   \************************************************/
@@ -30337,7 +30339,7 @@
 	'use strict';
 	
 	
-	var Autolinker = __webpack_require__(/*! autolinker */ 287);
+	var Autolinker = __webpack_require__(/*! autolinker */ 223);
 	
 	
 	var LINK_SCAN_RE = /www|@|\:\/\//;
@@ -30494,7 +30496,7 @@
 
 
 /***/ },
-/* 287 */
+/* 223 */
 /*!*****************************************!*\
   !*** ./~/autolinker/dist/Autolinker.js ***!
   \*****************************************/
@@ -32826,7 +32828,7 @@
 
 
 /***/ },
-/* 288 */
+/* 224 */
 /*!******************************************!*\
   !*** ./~/remarkable/lib/parser_block.js ***!
   \******************************************/
@@ -32838,26 +32840,26 @@
 	 * Local dependencies
 	 */
 	
-	var Ruler      = __webpack_require__(/*! ./ruler */ 271);
-	var StateBlock = __webpack_require__(/*! ./rules_block/state_block */ 289);
+	var Ruler      = __webpack_require__(/*! ./ruler */ 207);
+	var StateBlock = __webpack_require__(/*! ./rules_block/state_block */ 225);
 	
 	/**
 	 * Parser rules
 	 */
 	
 	var _rules = [
-	  [ 'code',       __webpack_require__(/*! ./rules_block/code */ 290) ],
-	  [ 'fences',     __webpack_require__(/*! ./rules_block/fences */ 291),     [ 'paragraph', 'blockquote', 'list' ] ],
-	  [ 'blockquote', __webpack_require__(/*! ./rules_block/blockquote */ 292), [ 'paragraph', 'blockquote', 'list' ] ],
-	  [ 'hr',         __webpack_require__(/*! ./rules_block/hr */ 293),         [ 'paragraph', 'blockquote', 'list' ] ],
-	  [ 'list',       __webpack_require__(/*! ./rules_block/list */ 294),       [ 'paragraph', 'blockquote' ] ],
-	  [ 'footnote',   __webpack_require__(/*! ./rules_block/footnote */ 295),   [ 'paragraph' ] ],
-	  [ 'heading',    __webpack_require__(/*! ./rules_block/heading */ 296),    [ 'paragraph', 'blockquote' ] ],
-	  [ 'lheading',   __webpack_require__(/*! ./rules_block/lheading */ 297) ],
-	  [ 'htmlblock',  __webpack_require__(/*! ./rules_block/htmlblock */ 298),  [ 'paragraph', 'blockquote' ] ],
-	  [ 'table',      __webpack_require__(/*! ./rules_block/table */ 300),      [ 'paragraph' ] ],
-	  [ 'deflist',    __webpack_require__(/*! ./rules_block/deflist */ 301),    [ 'paragraph' ] ],
-	  [ 'paragraph',  __webpack_require__(/*! ./rules_block/paragraph */ 302) ]
+	  [ 'code',       __webpack_require__(/*! ./rules_block/code */ 226) ],
+	  [ 'fences',     __webpack_require__(/*! ./rules_block/fences */ 227),     [ 'paragraph', 'blockquote', 'list' ] ],
+	  [ 'blockquote', __webpack_require__(/*! ./rules_block/blockquote */ 228), [ 'paragraph', 'blockquote', 'list' ] ],
+	  [ 'hr',         __webpack_require__(/*! ./rules_block/hr */ 229),         [ 'paragraph', 'blockquote', 'list' ] ],
+	  [ 'list',       __webpack_require__(/*! ./rules_block/list */ 230),       [ 'paragraph', 'blockquote' ] ],
+	  [ 'footnote',   __webpack_require__(/*! ./rules_block/footnote */ 231),   [ 'paragraph' ] ],
+	  [ 'heading',    __webpack_require__(/*! ./rules_block/heading */ 232),    [ 'paragraph', 'blockquote' ] ],
+	  [ 'lheading',   __webpack_require__(/*! ./rules_block/lheading */ 233) ],
+	  [ 'htmlblock',  __webpack_require__(/*! ./rules_block/htmlblock */ 234),  [ 'paragraph', 'blockquote' ] ],
+	  [ 'table',      __webpack_require__(/*! ./rules_block/table */ 236),      [ 'paragraph' ] ],
+	  [ 'deflist',    __webpack_require__(/*! ./rules_block/deflist */ 237),    [ 'paragraph' ] ],
+	  [ 'paragraph',  __webpack_require__(/*! ./rules_block/paragraph */ 238) ]
 	];
 	
 	/**
@@ -32990,7 +32992,7 @@
 
 
 /***/ },
-/* 289 */
+/* 225 */
 /*!*****************************************************!*\
   !*** ./~/remarkable/lib/rules_block/state_block.js ***!
   \*****************************************************/
@@ -33157,7 +33159,7 @@
 
 
 /***/ },
-/* 290 */
+/* 226 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_block/code.js ***!
   \**********************************************/
@@ -33202,7 +33204,7 @@
 
 
 /***/ },
-/* 291 */
+/* 227 */
 /*!************************************************!*\
   !*** ./~/remarkable/lib/rules_block/fences.js ***!
   \************************************************/
@@ -33302,7 +33304,7 @@
 
 
 /***/ },
-/* 292 */
+/* 228 */
 /*!****************************************************!*\
   !*** ./~/remarkable/lib/rules_block/blockquote.js ***!
   \****************************************************/
@@ -33444,7 +33446,7 @@
 
 
 /***/ },
-/* 293 */
+/* 229 */
 /*!********************************************!*\
   !*** ./~/remarkable/lib/rules_block/hr.js ***!
   \********************************************/
@@ -33498,7 +33500,7 @@
 
 
 /***/ },
-/* 294 */
+/* 230 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_block/list.js ***!
   \**********************************************/
@@ -33773,7 +33775,7 @@
 
 
 /***/ },
-/* 295 */
+/* 231 */
 /*!**************************************************!*\
   !*** ./~/remarkable/lib/rules_block/footnote.js ***!
   \**************************************************/
@@ -33849,7 +33851,7 @@
 
 
 /***/ },
-/* 296 */
+/* 232 */
 /*!*************************************************!*\
   !*** ./~/remarkable/lib/rules_block/heading.js ***!
   \*************************************************/
@@ -33916,7 +33918,7 @@
 
 
 /***/ },
-/* 297 */
+/* 233 */
 /*!**************************************************!*\
   !*** ./~/remarkable/lib/rules_block/lheading.js ***!
   \**************************************************/
@@ -33980,7 +33982,7 @@
 
 
 /***/ },
-/* 298 */
+/* 234 */
 /*!***************************************************!*\
   !*** ./~/remarkable/lib/rules_block/htmlblock.js ***!
   \***************************************************/
@@ -33991,7 +33993,7 @@
 	'use strict';
 	
 	
-	var block_names = __webpack_require__(/*! ../common/html_blocks */ 299);
+	var block_names = __webpack_require__(/*! ../common/html_blocks */ 235);
 	
 	
 	var HTML_TAG_OPEN_RE = /^<([a-zA-Z]{1,15})[\s\/>]/;
@@ -34063,7 +34065,7 @@
 
 
 /***/ },
-/* 299 */
+/* 235 */
 /*!************************************************!*\
   !*** ./~/remarkable/lib/common/html_blocks.js ***!
   \************************************************/
@@ -34134,7 +34136,7 @@
 
 
 /***/ },
-/* 300 */
+/* 236 */
 /*!***********************************************!*\
   !*** ./~/remarkable/lib/rules_block/table.js ***!
   \***********************************************/
@@ -34277,7 +34279,7 @@
 
 
 /***/ },
-/* 301 */
+/* 237 */
 /*!*************************************************!*\
   !*** ./~/remarkable/lib/rules_block/deflist.js ***!
   \*************************************************/
@@ -34493,7 +34495,7 @@
 
 
 /***/ },
-/* 302 */
+/* 238 */
 /*!***************************************************!*\
   !*** ./~/remarkable/lib/rules_block/paragraph.js ***!
   \***************************************************/
@@ -34561,7 +34563,7 @@
 
 
 /***/ },
-/* 303 */
+/* 239 */
 /*!*******************************************!*\
   !*** ./~/remarkable/lib/parser_inline.js ***!
   \*******************************************/
@@ -34573,31 +34575,31 @@
 	 * Local dependencies
 	 */
 	
-	var Ruler       = __webpack_require__(/*! ./ruler */ 271);
-	var StateInline = __webpack_require__(/*! ./rules_inline/state_inline */ 274);
-	var utils       = __webpack_require__(/*! ./common/utils */ 266);
+	var Ruler       = __webpack_require__(/*! ./ruler */ 207);
+	var StateInline = __webpack_require__(/*! ./rules_inline/state_inline */ 210);
+	var utils       = __webpack_require__(/*! ./common/utils */ 202);
 	
 	/**
 	 * Inline Parser `rules`
 	 */
 	
 	var _rules = [
-	  [ 'text',            __webpack_require__(/*! ./rules_inline/text */ 304) ],
-	  [ 'newline',         __webpack_require__(/*! ./rules_inline/newline */ 305) ],
-	  [ 'escape',          __webpack_require__(/*! ./rules_inline/escape */ 306) ],
-	  [ 'backticks',       __webpack_require__(/*! ./rules_inline/backticks */ 307) ],
-	  [ 'del',             __webpack_require__(/*! ./rules_inline/del */ 308) ],
-	  [ 'ins',             __webpack_require__(/*! ./rules_inline/ins */ 309) ],
-	  [ 'mark',            __webpack_require__(/*! ./rules_inline/mark */ 310) ],
-	  [ 'emphasis',        __webpack_require__(/*! ./rules_inline/emphasis */ 311) ],
-	  [ 'sub',             __webpack_require__(/*! ./rules_inline/sub */ 312) ],
-	  [ 'sup',             __webpack_require__(/*! ./rules_inline/sup */ 313) ],
-	  [ 'links',           __webpack_require__(/*! ./rules_inline/links */ 314) ],
-	  [ 'footnote_inline', __webpack_require__(/*! ./rules_inline/footnote_inline */ 315) ],
-	  [ 'footnote_ref',    __webpack_require__(/*! ./rules_inline/footnote_ref */ 316) ],
-	  [ 'autolink',        __webpack_require__(/*! ./rules_inline/autolink */ 317) ],
-	  [ 'htmltag',         __webpack_require__(/*! ./rules_inline/htmltag */ 319) ],
-	  [ 'entity',          __webpack_require__(/*! ./rules_inline/entity */ 321) ]
+	  [ 'text',            __webpack_require__(/*! ./rules_inline/text */ 240) ],
+	  [ 'newline',         __webpack_require__(/*! ./rules_inline/newline */ 241) ],
+	  [ 'escape',          __webpack_require__(/*! ./rules_inline/escape */ 242) ],
+	  [ 'backticks',       __webpack_require__(/*! ./rules_inline/backticks */ 243) ],
+	  [ 'del',             __webpack_require__(/*! ./rules_inline/del */ 244) ],
+	  [ 'ins',             __webpack_require__(/*! ./rules_inline/ins */ 245) ],
+	  [ 'mark',            __webpack_require__(/*! ./rules_inline/mark */ 246) ],
+	  [ 'emphasis',        __webpack_require__(/*! ./rules_inline/emphasis */ 247) ],
+	  [ 'sub',             __webpack_require__(/*! ./rules_inline/sub */ 248) ],
+	  [ 'sup',             __webpack_require__(/*! ./rules_inline/sup */ 249) ],
+	  [ 'links',           __webpack_require__(/*! ./rules_inline/links */ 250) ],
+	  [ 'footnote_inline', __webpack_require__(/*! ./rules_inline/footnote_inline */ 251) ],
+	  [ 'footnote_ref',    __webpack_require__(/*! ./rules_inline/footnote_ref */ 252) ],
+	  [ 'autolink',        __webpack_require__(/*! ./rules_inline/autolink */ 253) ],
+	  [ 'htmltag',         __webpack_require__(/*! ./rules_inline/htmltag */ 255) ],
+	  [ 'entity',          __webpack_require__(/*! ./rules_inline/entity */ 257) ]
 	];
 	
 	/**
@@ -34731,7 +34733,7 @@
 
 
 /***/ },
-/* 304 */
+/* 240 */
 /*!***********************************************!*\
   !*** ./~/remarkable/lib/rules_inline/text.js ***!
   \***********************************************/
@@ -34793,7 +34795,7 @@
 
 
 /***/ },
-/* 305 */
+/* 241 */
 /*!**************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/newline.js ***!
   \**************************************************/
@@ -34850,7 +34852,7 @@
 
 
 /***/ },
-/* 306 */
+/* 242 */
 /*!*************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/escape.js ***!
   \*************************************************/
@@ -34908,7 +34910,7 @@
 
 
 /***/ },
-/* 307 */
+/* 243 */
 /*!****************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/backticks.js ***!
   \****************************************************/
@@ -34963,7 +34965,7 @@
 
 
 /***/ },
-/* 308 */
+/* 244 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_inline/del.js ***!
   \**********************************************/
@@ -35056,7 +35058,7 @@
 
 
 /***/ },
-/* 309 */
+/* 245 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_inline/ins.js ***!
   \**********************************************/
@@ -35149,7 +35151,7 @@
 
 
 /***/ },
-/* 310 */
+/* 246 */
 /*!***********************************************!*\
   !*** ./~/remarkable/lib/rules_inline/mark.js ***!
   \***********************************************/
@@ -35242,7 +35244,7 @@
 
 
 /***/ },
-/* 311 */
+/* 247 */
 /*!***************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/emphasis.js ***!
   \***************************************************/
@@ -35400,7 +35402,7 @@
 
 
 /***/ },
-/* 312 */
+/* 248 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_inline/sub.js ***!
   \**********************************************/
@@ -35467,7 +35469,7 @@
 
 
 /***/ },
-/* 313 */
+/* 249 */
 /*!**********************************************!*\
   !*** ./~/remarkable/lib/rules_inline/sup.js ***!
   \**********************************************/
@@ -35534,7 +35536,7 @@
 
 
 /***/ },
-/* 314 */
+/* 250 */
 /*!************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/links.js ***!
   \************************************************/
@@ -35544,10 +35546,10 @@
 	
 	'use strict';
 	
-	var parseLinkLabel       = __webpack_require__(/*! ../helpers/parse_link_label */ 275);
-	var parseLinkDestination = __webpack_require__(/*! ../helpers/parse_link_destination */ 277);
-	var parseLinkTitle       = __webpack_require__(/*! ../helpers/parse_link_title */ 279);
-	var normalizeReference   = __webpack_require__(/*! ../helpers/normalize_reference */ 280);
+	var parseLinkLabel       = __webpack_require__(/*! ../helpers/parse_link_label */ 211);
+	var parseLinkDestination = __webpack_require__(/*! ../helpers/parse_link_destination */ 213);
+	var parseLinkTitle       = __webpack_require__(/*! ../helpers/parse_link_title */ 215);
+	var normalizeReference   = __webpack_require__(/*! ../helpers/normalize_reference */ 216);
 	
 	
 	module.exports = function links(state, silent) {
@@ -35713,7 +35715,7 @@
 
 
 /***/ },
-/* 315 */
+/* 251 */
 /*!**********************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/footnote_inline.js ***!
   \**********************************************************/
@@ -35723,7 +35725,7 @@
 	
 	'use strict';
 	
-	var parseLinkLabel = __webpack_require__(/*! ../helpers/parse_link_label */ 275);
+	var parseLinkLabel = __webpack_require__(/*! ../helpers/parse_link_label */ 211);
 	
 	
 	module.exports = function footnote_inline(state, silent) {
@@ -35775,7 +35777,7 @@
 
 
 /***/ },
-/* 316 */
+/* 252 */
 /*!*******************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/footnote_ref.js ***!
   \*******************************************************/
@@ -35846,7 +35848,7 @@
 
 
 /***/ },
-/* 317 */
+/* 253 */
 /*!***************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/autolink.js ***!
   \***************************************************/
@@ -35856,8 +35858,8 @@
 	
 	'use strict';
 	
-	var url_schemas   = __webpack_require__(/*! ../common/url_schemas */ 318);
-	var normalizeLink = __webpack_require__(/*! ../helpers/normalize_link */ 278);
+	var url_schemas   = __webpack_require__(/*! ../common/url_schemas */ 254);
+	var normalizeLink = __webpack_require__(/*! ../helpers/normalize_link */ 214);
 	
 	
 	/*eslint max-len:0*/
@@ -35933,7 +35935,7 @@
 
 
 /***/ },
-/* 318 */
+/* 254 */
 /*!************************************************!*\
   !*** ./~/remarkable/lib/common/url_schemas.js ***!
   \************************************************/
@@ -36114,7 +36116,7 @@
 
 
 /***/ },
-/* 319 */
+/* 255 */
 /*!**************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/htmltag.js ***!
   \**************************************************/
@@ -36125,7 +36127,7 @@
 	'use strict';
 	
 	
-	var HTML_TAG_RE = __webpack_require__(/*! ../common/html_re */ 320).HTML_TAG_RE;
+	var HTML_TAG_RE = __webpack_require__(/*! ../common/html_re */ 256).HTML_TAG_RE;
 	
 	
 	function isLetter(ch) {
@@ -36172,7 +36174,7 @@
 
 
 /***/ },
-/* 320 */
+/* 256 */
 /*!********************************************!*\
   !*** ./~/remarkable/lib/common/html_re.js ***!
   \********************************************/
@@ -36240,7 +36242,7 @@
 
 
 /***/ },
-/* 321 */
+/* 257 */
 /*!*************************************************!*\
   !*** ./~/remarkable/lib/rules_inline/entity.js ***!
   \*************************************************/
@@ -36250,10 +36252,10 @@
 	
 	'use strict';
 	
-	var entities          = __webpack_require__(/*! ../common/entities */ 267);
-	var has               = __webpack_require__(/*! ../common/utils */ 266).has;
-	var isValidEntityCode = __webpack_require__(/*! ../common/utils */ 266).isValidEntityCode;
-	var fromCodePoint     = __webpack_require__(/*! ../common/utils */ 266).fromCodePoint;
+	var entities          = __webpack_require__(/*! ../common/entities */ 203);
+	var has               = __webpack_require__(/*! ../common/utils */ 202).has;
+	var isValidEntityCode = __webpack_require__(/*! ../common/utils */ 202).isValidEntityCode;
+	var fromCodePoint     = __webpack_require__(/*! ../common/utils */ 202).fromCodePoint;
 	
 	
 	var DIGITAL_RE = /^&#((?:x[a-f0-9]{1,8}|[0-9]{1,8}));/i;
@@ -36297,7 +36299,7 @@
 
 
 /***/ },
-/* 322 */
+/* 258 */
 /*!*********************************************!*\
   !*** ./~/remarkable/lib/configs/default.js ***!
   \*********************************************/
@@ -36385,7 +36387,7 @@
 
 
 /***/ },
-/* 323 */
+/* 259 */
 /*!******************************************!*\
   !*** ./~/remarkable/lib/configs/full.js ***!
   \******************************************/
@@ -36432,7 +36434,7 @@
 
 
 /***/ },
-/* 324 */
+/* 260 */
 /*!************************************************!*\
   !*** ./~/remarkable/lib/configs/commonmark.js ***!
   \************************************************/
@@ -36512,7 +36514,7 @@
 
 
 /***/ },
-/* 325 */
+/* 261 */
 /*!*****************************************!*\
   !*** ./~/remarkable-react/lib/index.js ***!
   \*****************************************/
@@ -36524,7 +36526,7 @@
 	  value: true
 	});
 	
-	var _renderer = __webpack_require__(/*! ./lib/renderer */ 326);
+	var _renderer = __webpack_require__(/*! ./lib/renderer */ 262);
 	
 	Object.defineProperty(exports, 'default', {
 	  enumerable: true,
@@ -36536,7 +36538,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 326 */
+/* 262 */
 /*!************************************************!*\
   !*** ./~/remarkable-react/lib/lib/renderer.js ***!
   \************************************************/
@@ -36558,7 +36560,7 @@
 	
 	var _ReactDOMFactories2 = _interopRequireDefault(_ReactDOMFactories);
 	
-	var _tokenTreeBuilder = __webpack_require__(/*! ./token-tree-builder */ 327);
+	var _tokenTreeBuilder = __webpack_require__(/*! ./token-tree-builder */ 263);
 	
 	var _tokenTreeBuilder2 = _interopRequireDefault(_tokenTreeBuilder);
 	
@@ -36662,7 +36664,7 @@
 	exports.default = Renderer;
 
 /***/ },
-/* 327 */
+/* 263 */
 /*!**********************************************************!*\
   !*** ./~/remarkable-react/lib/lib/token-tree-builder.js ***!
   \**********************************************************/
@@ -36676,7 +36678,7 @@
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _tokenTypes = __webpack_require__(/*! ./token-types */ 328);
+	var _tokenTypes = __webpack_require__(/*! ./token-types */ 264);
 	
 	var tokenTypes = _interopRequireWildcard(_tokenTypes);
 	
@@ -36767,7 +36769,7 @@
 	exports.default = buildTokenTree;
 
 /***/ },
-/* 328 */
+/* 264 */
 /*!***************************************************!*\
   !*** ./~/remarkable-react/lib/lib/token-types.js ***!
   \***************************************************/
@@ -36808,7 +36810,7 @@
 	var tr_open = exports.tr_open = 'tr';
 
 /***/ },
-/* 329 */
+/* 265 */
 /*!**********************************************************!*\
   !*** ./src/components/movies/movie-item/movie-image.jsx ***!
   \**********************************************************/
@@ -36845,45 +36847,1050 @@
 	exports.default = MovieImage;
 
 /***/ },
-/* 330 */,
-/* 331 */
-/*!******************************************************!*\
-  !*** ./src/components/movies/search-input/index.jsx ***!
-  \******************************************************/
+/* 266 */
+/*!*************************!*\
+  !*** ./~/page/index.js ***!
+  \*************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(process) {  /* globals require, module */
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
+	  'use strict';
 	
-	var _react = __webpack_require__(/*! react */ 1);
+	  /**
+	   * Module dependencies.
+	   */
 	
-	var _react2 = _interopRequireDefault(_react);
+	  var pathtoRegexp = __webpack_require__(/*! path-to-regexp */ 267);
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	  /**
+	   * Module exports.
+	   */
 	
-	function SearchInput(_ref) {
-	  var defaultValue = _ref.defaultValue;
-	  var onChange = _ref.onChange;
+	  module.exports = page;
 	
-	  return _react2.default.createElement(
-	    'div',
-	    { style: { position: 'absolute', top: '90px' } },
-	    _react2.default.createElement(
-	      'label',
-	      { htmlFor: 'search' },
-	      ' Search movies: '
-	    ),
-	    _react2.default.createElement('input', { type: 'text', name: 'search', defaultValue: defaultValue, onChange: onChange })
-	  );
-	}
+	  /**
+	   * Detect click event
+	   */
+	  var clickEvent = ('undefined' !== typeof document) && document.ontouchstart ? 'touchstart' : 'click';
 	
-	exports.default = SearchInput;
+	  /**
+	   * To work properly with the URL
+	   * history.location generated polyfill in https://github.com/devote/HTML5-History-API
+	   */
+	
+	  var location = ('undefined' !== typeof window) && (window.history.location || window.location);
+	
+	  /**
+	   * Perform initial dispatch.
+	   */
+	
+	  var dispatch = true;
+	
+	
+	  /**
+	   * Decode URL components (query string, pathname, hash).
+	   * Accommodates both regular percent encoding and x-www-form-urlencoded format.
+	   */
+	  var decodeURLComponents = true;
+	
+	  /**
+	   * Base path.
+	   */
+	
+	  var base = '';
+	
+	  /**
+	   * Running flag.
+	   */
+	
+	  var running;
+	
+	  /**
+	   * HashBang option
+	   */
+	
+	  var hashbang = false;
+	
+	  /**
+	   * Previous context, for capturing
+	   * page exit events.
+	   */
+	
+	  var prevContext;
+	
+	  /**
+	   * Register `path` with callback `fn()`,
+	   * or route `path`, or redirection,
+	   * or `page.start()`.
+	   *
+	   *   page(fn);
+	   *   page('*', fn);
+	   *   page('/user/:id', load, user);
+	   *   page('/user/' + user.id, { some: 'thing' });
+	   *   page('/user/' + user.id);
+	   *   page('/from', '/to')
+	   *   page();
+	   *
+	   * @param {string|!Function|!Object} path
+	   * @param {Function=} fn
+	   * @api public
+	   */
+	
+	  function page(path, fn) {
+	    // <callback>
+	    if ('function' === typeof path) {
+	      return page('*', path);
+	    }
+	
+	    // route <path> to <callback ...>
+	    if ('function' === typeof fn) {
+	      var route = new Route(/** @type {string} */ (path));
+	      for (var i = 1; i < arguments.length; ++i) {
+	        page.callbacks.push(route.middleware(arguments[i]));
+	      }
+	      // show <path> with [state]
+	    } else if ('string' === typeof path) {
+	      page['string' === typeof fn ? 'redirect' : 'show'](path, fn);
+	      // start [options]
+	    } else {
+	      page.start(path);
+	    }
+	  }
+	
+	  /**
+	   * Callback functions.
+	   */
+	
+	  page.callbacks = [];
+	  page.exits = [];
+	
+	  /**
+	   * Current path being processed
+	   * @type {string}
+	   */
+	  page.current = '';
+	
+	  /**
+	   * Number of pages navigated to.
+	   * @type {number}
+	   *
+	   *     page.len == 0;
+	   *     page('/login');
+	   *     page.len == 1;
+	   */
+	
+	  page.len = 0;
+	
+	  /**
+	   * Get or set basepath to `path`.
+	   *
+	   * @param {string} path
+	   * @api public
+	   */
+	
+	  page.base = function(path) {
+	    if (0 === arguments.length) return base;
+	    base = path;
+	  };
+	
+	  /**
+	   * Bind with the given `options`.
+	   *
+	   * Options:
+	   *
+	   *    - `click` bind to click events [true]
+	   *    - `popstate` bind to popstate [true]
+	   *    - `dispatch` perform initial dispatch [true]
+	   *
+	   * @param {Object} options
+	   * @api public
+	   */
+	
+	  page.start = function(options) {
+	    options = options || {};
+	    if (running) return;
+	    running = true;
+	    if (false === options.dispatch) dispatch = false;
+	    if (false === options.decodeURLComponents) decodeURLComponents = false;
+	    if (false !== options.popstate) window.addEventListener('popstate', onpopstate, false);
+	    if (false !== options.click) {
+	      document.addEventListener(clickEvent, onclick, false);
+	    }
+	    if (true === options.hashbang) hashbang = true;
+	    if (!dispatch) return;
+	    var url = (hashbang && ~location.hash.indexOf('#!')) ? location.hash.substr(2) + location.search : location.pathname + location.search + location.hash;
+	    page.replace(url, null, true, dispatch);
+	  };
+	
+	  /**
+	   * Unbind click and popstate event handlers.
+	   *
+	   * @api public
+	   */
+	
+	  page.stop = function() {
+	    if (!running) return;
+	    page.current = '';
+	    page.len = 0;
+	    running = false;
+	    document.removeEventListener(clickEvent, onclick, false);
+	    window.removeEventListener('popstate', onpopstate, false);
+	  };
+	
+	  /**
+	   * Show `path` with optional `state` object.
+	   *
+	   * @param {string} path
+	   * @param {Object=} state
+	   * @param {boolean=} dispatch
+	   * @param {boolean=} push
+	   * @return {!Context}
+	   * @api public
+	   */
+	
+	  page.show = function(path, state, dispatch, push) {
+	    var ctx = new Context(path, state);
+	    page.current = ctx.path;
+	    if (false !== dispatch) page.dispatch(ctx);
+	    if (false !== ctx.handled && false !== push) ctx.pushState();
+	    return ctx;
+	  };
+	
+	  /**
+	   * Goes back in the history
+	   * Back should always let the current route push state and then go back.
+	   *
+	   * @param {string} path - fallback path to go back if no more history exists, if undefined defaults to page.base
+	   * @param {Object=} state
+	   * @api public
+	   */
+	
+	  page.back = function(path, state) {
+	    if (page.len > 0) {
+	      // this may need more testing to see if all browsers
+	      // wait for the next tick to go back in history
+	      history.back();
+	      page.len--;
+	    } else if (path) {
+	      setTimeout(function() {
+	        page.show(path, state);
+	      });
+	    }else{
+	      setTimeout(function() {
+	        page.show(base, state);
+	      });
+	    }
+	  };
+	
+	
+	  /**
+	   * Register route to redirect from one path to other
+	   * or just redirect to another route
+	   *
+	   * @param {string} from - if param 'to' is undefined redirects to 'from'
+	   * @param {string=} to
+	   * @api public
+	   */
+	  page.redirect = function(from, to) {
+	    // Define route from a path to another
+	    if ('string' === typeof from && 'string' === typeof to) {
+	      page(from, function(e) {
+	        setTimeout(function() {
+	          page.replace(/** @type {!string} */ (to));
+	        }, 0);
+	      });
+	    }
+	
+	    // Wait for the push state and replace it with another
+	    if ('string' === typeof from && 'undefined' === typeof to) {
+	      setTimeout(function() {
+	        page.replace(from);
+	      }, 0);
+	    }
+	  };
+	
+	  /**
+	   * Replace `path` with optional `state` object.
+	   *
+	   * @param {string} path
+	   * @param {Object=} state
+	   * @param {boolean=} init
+	   * @param {boolean=} dispatch
+	   * @return {!Context}
+	   * @api public
+	   */
+	
+	
+	  page.replace = function(path, state, init, dispatch) {
+	    var ctx = new Context(path, state);
+	    page.current = ctx.path;
+	    ctx.init = init;
+	    ctx.save(); // save before dispatching, which may redirect
+	    if (false !== dispatch) page.dispatch(ctx);
+	    return ctx;
+	  };
+	
+	  /**
+	   * Dispatch the given `ctx`.
+	   *
+	   * @param {Context} ctx
+	   * @api private
+	   */
+	  page.dispatch = function(ctx) {
+	    var prev = prevContext,
+	      i = 0,
+	      j = 0;
+	
+	    prevContext = ctx;
+	
+	    function nextExit() {
+	      var fn = page.exits[j++];
+	      if (!fn) return nextEnter();
+	      fn(prev, nextExit);
+	    }
+	
+	    function nextEnter() {
+	      var fn = page.callbacks[i++];
+	
+	      if (ctx.path !== page.current) {
+	        ctx.handled = false;
+	        return;
+	      }
+	      if (!fn) return unhandled(ctx);
+	      fn(ctx, nextEnter);
+	    }
+	
+	    if (prev) {
+	      nextExit();
+	    } else {
+	      nextEnter();
+	    }
+	  };
+	
+	  /**
+	   * Unhandled `ctx`. When it's not the initial
+	   * popstate then redirect. If you wish to handle
+	   * 404s on your own use `page('*', callback)`.
+	   *
+	   * @param {Context} ctx
+	   * @api private
+	   */
+	  function unhandled(ctx) {
+	    if (ctx.handled) return;
+	    var current;
+	
+	    if (hashbang) {
+	      current = base + location.hash.replace('#!', '');
+	    } else {
+	      current = location.pathname + location.search;
+	    }
+	
+	    if (current === ctx.canonicalPath) return;
+	    page.stop();
+	    ctx.handled = false;
+	    location.href = ctx.canonicalPath;
+	  }
+	
+	  /**
+	   * Register an exit route on `path` with
+	   * callback `fn()`, which will be called
+	   * on the previous context when a new
+	   * page is visited.
+	   */
+	  page.exit = function(path, fn) {
+	    if (typeof path === 'function') {
+	      return page.exit('*', path);
+	    }
+	
+	    var route = new Route(path);
+	    for (var i = 1; i < arguments.length; ++i) {
+	      page.exits.push(route.middleware(arguments[i]));
+	    }
+	  };
+	
+	  /**
+	   * Remove URL encoding from the given `str`.
+	   * Accommodates whitespace in both x-www-form-urlencoded
+	   * and regular percent-encoded form.
+	   *
+	   * @param {string} val - URL component to decode
+	   */
+	  function decodeURLEncodedURIComponent(val) {
+	    if (typeof val !== 'string') { return val; }
+	    return decodeURLComponents ? decodeURIComponent(val.replace(/\+/g, ' ')) : val;
+	  }
+	
+	  /**
+	   * Initialize a new "request" `Context`
+	   * with the given `path` and optional initial `state`.
+	   *
+	   * @constructor
+	   * @param {string} path
+	   * @param {Object=} state
+	   * @api public
+	   */
+	
+	  function Context(path, state) {
+	    if ('/' === path[0] && 0 !== path.indexOf(base)) path = base + (hashbang ? '#!' : '') + path;
+	    var i = path.indexOf('?');
+	
+	    this.canonicalPath = path;
+	    this.path = path.replace(base, '') || '/';
+	    if (hashbang) this.path = this.path.replace('#!', '') || '/';
+	
+	    this.title = document.title;
+	    this.state = state || {};
+	    this.state.path = path;
+	    this.querystring = ~i ? decodeURLEncodedURIComponent(path.slice(i + 1)) : '';
+	    this.pathname = decodeURLEncodedURIComponent(~i ? path.slice(0, i) : path);
+	    this.params = {};
+	
+	    // fragment
+	    this.hash = '';
+	    if (!hashbang) {
+	      if (!~this.path.indexOf('#')) return;
+	      var parts = this.path.split('#');
+	      this.path = parts[0];
+	      this.hash = decodeURLEncodedURIComponent(parts[1]) || '';
+	      this.querystring = this.querystring.split('#')[0];
+	    }
+	  }
+	
+	  /**
+	   * Expose `Context`.
+	   */
+	
+	  page.Context = Context;
+	
+	  /**
+	   * Push state.
+	   *
+	   * @api private
+	   */
+	
+	  Context.prototype.pushState = function() {
+	    page.len++;
+	    history.pushState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
+	  };
+	
+	  /**
+	   * Save the context state.
+	   *
+	   * @api public
+	   */
+	
+	  Context.prototype.save = function() {
+	    history.replaceState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
+	  };
+	
+	  /**
+	   * Initialize `Route` with the given HTTP `path`,
+	   * and an array of `callbacks` and `options`.
+	   *
+	   * Options:
+	   *
+	   *   - `sensitive`    enable case-sensitive routes
+	   *   - `strict`       enable strict matching for trailing slashes
+	   *
+	   * @constructor
+	   * @param {string} path
+	   * @param {Object=} options
+	   * @api private
+	   */
+	
+	  function Route(path, options) {
+	    options = options || {};
+	    this.path = (path === '*') ? '(.*)' : path;
+	    this.method = 'GET';
+	    this.regexp = pathtoRegexp(this.path,
+	      this.keys = [],
+	      options);
+	  }
+	
+	  /**
+	   * Expose `Route`.
+	   */
+	
+	  page.Route = Route;
+	
+	  /**
+	   * Return route middleware with
+	   * the given callback `fn()`.
+	   *
+	   * @param {Function} fn
+	   * @return {Function}
+	   * @api public
+	   */
+	
+	  Route.prototype.middleware = function(fn) {
+	    var self = this;
+	    return function(ctx, next) {
+	      if (self.match(ctx.path, ctx.params)) return fn(ctx, next);
+	      next();
+	    };
+	  };
+	
+	  /**
+	   * Check if this route matches `path`, if so
+	   * populate `params`.
+	   *
+	   * @param {string} path
+	   * @param {Object} params
+	   * @return {boolean}
+	   * @api private
+	   */
+	
+	  Route.prototype.match = function(path, params) {
+	    var keys = this.keys,
+	      qsIndex = path.indexOf('?'),
+	      pathname = ~qsIndex ? path.slice(0, qsIndex) : path,
+	      m = this.regexp.exec(decodeURIComponent(pathname));
+	
+	    if (!m) return false;
+	
+	    for (var i = 1, len = m.length; i < len; ++i) {
+	      var key = keys[i - 1];
+	      var val = decodeURLEncodedURIComponent(m[i]);
+	      if (val !== undefined || !(hasOwnProperty.call(params, key.name))) {
+	        params[key.name] = val;
+	      }
+	    }
+	
+	    return true;
+	  };
+	
+	
+	  /**
+	   * Handle "populate" events.
+	   */
+	
+	  var onpopstate = (function () {
+	    var loaded = false;
+	    if ('undefined' === typeof window) {
+	      return;
+	    }
+	    if (document.readyState === 'complete') {
+	      loaded = true;
+	    } else {
+	      window.addEventListener('load', function() {
+	        setTimeout(function() {
+	          loaded = true;
+	        }, 0);
+	      });
+	    }
+	    return function onpopstate(e) {
+	      if (!loaded) return;
+	      if (e.state) {
+	        var path = e.state.path;
+	        page.replace(path, e.state);
+	      } else {
+	        page.show(location.pathname + location.hash, undefined, undefined, false);
+	      }
+	    };
+	  })();
+	  /**
+	   * Handle "click" events.
+	   */
+	
+	  function onclick(e) {
+	
+	    if (1 !== which(e)) return;
+	
+	    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+	    if (e.defaultPrevented) return;
+	
+	
+	
+	    // ensure link
+	    // use shadow dom when available
+	    var el = e.path ? e.path[0] : e.target;
+	    while (el && 'A' !== el.nodeName) el = el.parentNode;
+	    if (!el || 'A' !== el.nodeName) return;
+	
+	
+	
+	    // Ignore if tag has
+	    // 1. "download" attribute
+	    // 2. rel="external" attribute
+	    if (el.hasAttribute('download') || el.getAttribute('rel') === 'external') return;
+	
+	    // ensure non-hash for the same path
+	    var link = el.getAttribute('href');
+	    if (!hashbang && el.pathname === location.pathname && (el.hash || '#' === link)) return;
+	
+	
+	
+	    // Check for mailto: in the href
+	    if (link && link.indexOf('mailto:') > -1) return;
+	
+	    // check target
+	    if (el.target) return;
+	
+	    // x-origin
+	    if (!sameOrigin(el.href)) return;
+	
+	
+	
+	    // rebuild path
+	    var path = el.pathname + el.search + (el.hash || '');
+	
+	    // strip leading "/[drive letter]:" on NW.js on Windows
+	    if (typeof process !== 'undefined' && path.match(/^\/[a-zA-Z]:\//)) {
+	      path = path.replace(/^\/[a-zA-Z]:\//, '/');
+	    }
+	
+	    // same page
+	    var orig = path;
+	
+	    if (path.indexOf(base) === 0) {
+	      path = path.substr(base.length);
+	    }
+	
+	    if (hashbang) path = path.replace('#!', '');
+	
+	    if (base && orig === path) return;
+	
+	    e.preventDefault();
+	    page.show(orig);
+	  }
+	
+	  /**
+	   * Event button.
+	   */
+	
+	  function which(e) {
+	    e = e || window.event;
+	    return null === e.which ? e.button : e.which;
+	  }
+	
+	  /**
+	   * Check if `href` is the same origin.
+	   */
+	
+	  function sameOrigin(href) {
+	    var origin = location.protocol + '//' + location.hostname;
+	    if (location.port) origin += ':' + location.port;
+	    return (href && (0 === href.indexOf(origin)));
+	  }
+	
+	  page.sameOrigin = sameOrigin;
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 332 */
+/* 267 */
+/*!******************************************!*\
+  !*** ./~/page/~/path-to-regexp/index.js ***!
+  \******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	var isarray = __webpack_require__(/*! isarray */ 268)
+	
+	/**
+	 * Expose `pathToRegexp`.
+	 */
+	module.exports = pathToRegexp
+	module.exports.parse = parse
+	module.exports.compile = compile
+	module.exports.tokensToFunction = tokensToFunction
+	module.exports.tokensToRegExp = tokensToRegExp
+	
+	/**
+	 * The main path matching regexp utility.
+	 *
+	 * @type {RegExp}
+	 */
+	var PATH_REGEXP = new RegExp([
+	  // Match escaped characters that would otherwise appear in future matches.
+	  // This allows the user to escape special characters that won't transform.
+	  '(\\\\.)',
+	  // Match Express-style parameters and un-named parameters with a prefix
+	  // and optional suffixes. Matches appear as:
+	  //
+	  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
+	  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
+	  // "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
+	  '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^()])+)\\))?|\\(((?:\\\\.|[^()])+)\\))([+*?])?|(\\*))'
+	].join('|'), 'g')
+	
+	/**
+	 * Parse a string for the raw tokens.
+	 *
+	 * @param  {String} str
+	 * @return {Array}
+	 */
+	function parse (str) {
+	  var tokens = []
+	  var key = 0
+	  var index = 0
+	  var path = ''
+	  var res
+	
+	  while ((res = PATH_REGEXP.exec(str)) != null) {
+	    var m = res[0]
+	    var escaped = res[1]
+	    var offset = res.index
+	    path += str.slice(index, offset)
+	    index = offset + m.length
+	
+	    // Ignore already escaped sequences.
+	    if (escaped) {
+	      path += escaped[1]
+	      continue
+	    }
+	
+	    // Push the current path onto the tokens.
+	    if (path) {
+	      tokens.push(path)
+	      path = ''
+	    }
+	
+	    var prefix = res[2]
+	    var name = res[3]
+	    var capture = res[4]
+	    var group = res[5]
+	    var suffix = res[6]
+	    var asterisk = res[7]
+	
+	    var repeat = suffix === '+' || suffix === '*'
+	    var optional = suffix === '?' || suffix === '*'
+	    var delimiter = prefix || '/'
+	    var pattern = capture || group || (asterisk ? '.*' : '[^' + delimiter + ']+?')
+	
+	    tokens.push({
+	      name: name || key++,
+	      prefix: prefix || '',
+	      delimiter: delimiter,
+	      optional: optional,
+	      repeat: repeat,
+	      pattern: escapeGroup(pattern)
+	    })
+	  }
+	
+	  // Match any characters still remaining.
+	  if (index < str.length) {
+	    path += str.substr(index)
+	  }
+	
+	  // If the path exists, push it onto the end.
+	  if (path) {
+	    tokens.push(path)
+	  }
+	
+	  return tokens
+	}
+	
+	/**
+	 * Compile a string to a template function for the path.
+	 *
+	 * @param  {String}   str
+	 * @return {Function}
+	 */
+	function compile (str) {
+	  return tokensToFunction(parse(str))
+	}
+	
+	/**
+	 * Expose a method for transforming tokens into the path function.
+	 */
+	function tokensToFunction (tokens) {
+	  // Compile all the tokens into regexps.
+	  var matches = new Array(tokens.length)
+	
+	  // Compile all the patterns before compilation.
+	  for (var i = 0; i < tokens.length; i++) {
+	    if (typeof tokens[i] === 'object') {
+	      matches[i] = new RegExp('^' + tokens[i].pattern + '$')
+	    }
+	  }
+	
+	  return function (obj) {
+	    var path = ''
+	    var data = obj || {}
+	
+	    for (var i = 0; i < tokens.length; i++) {
+	      var token = tokens[i]
+	
+	      if (typeof token === 'string') {
+	        path += token
+	
+	        continue
+	      }
+	
+	      var value = data[token.name]
+	      var segment
+	
+	      if (value == null) {
+	        if (token.optional) {
+	          continue
+	        } else {
+	          throw new TypeError('Expected "' + token.name + '" to be defined')
+	        }
+	      }
+	
+	      if (isarray(value)) {
+	        if (!token.repeat) {
+	          throw new TypeError('Expected "' + token.name + '" to not repeat, but received "' + value + '"')
+	        }
+	
+	        if (value.length === 0) {
+	          if (token.optional) {
+	            continue
+	          } else {
+	            throw new TypeError('Expected "' + token.name + '" to not be empty')
+	          }
+	        }
+	
+	        for (var j = 0; j < value.length; j++) {
+	          segment = encodeURIComponent(value[j])
+	
+	          if (!matches[i].test(segment)) {
+	            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
+	          }
+	
+	          path += (j === 0 ? token.prefix : token.delimiter) + segment
+	        }
+	
+	        continue
+	      }
+	
+	      segment = encodeURIComponent(value)
+	
+	      if (!matches[i].test(segment)) {
+	        throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
+	      }
+	
+	      path += token.prefix + segment
+	    }
+	
+	    return path
+	  }
+	}
+	
+	/**
+	 * Escape a regular expression string.
+	 *
+	 * @param  {String} str
+	 * @return {String}
+	 */
+	function escapeString (str) {
+	  return str.replace(/([.+*?=^!:${}()[\]|\/])/g, '\\$1')
+	}
+	
+	/**
+	 * Escape the capturing group by escaping special characters and meaning.
+	 *
+	 * @param  {String} group
+	 * @return {String}
+	 */
+	function escapeGroup (group) {
+	  return group.replace(/([=!:$\/()])/g, '\\$1')
+	}
+	
+	/**
+	 * Attach the keys as a property of the regexp.
+	 *
+	 * @param  {RegExp} re
+	 * @param  {Array}  keys
+	 * @return {RegExp}
+	 */
+	function attachKeys (re, keys) {
+	  re.keys = keys
+	  return re
+	}
+	
+	/**
+	 * Get the flags for a regexp from the options.
+	 *
+	 * @param  {Object} options
+	 * @return {String}
+	 */
+	function flags (options) {
+	  return options.sensitive ? '' : 'i'
+	}
+	
+	/**
+	 * Pull out keys from a regexp.
+	 *
+	 * @param  {RegExp} path
+	 * @param  {Array}  keys
+	 * @return {RegExp}
+	 */
+	function regexpToRegexp (path, keys) {
+	  // Use a negative lookahead to match only capturing groups.
+	  var groups = path.source.match(/\((?!\?)/g)
+	
+	  if (groups) {
+	    for (var i = 0; i < groups.length; i++) {
+	      keys.push({
+	        name: i,
+	        prefix: null,
+	        delimiter: null,
+	        optional: false,
+	        repeat: false,
+	        pattern: null
+	      })
+	    }
+	  }
+	
+	  return attachKeys(path, keys)
+	}
+	
+	/**
+	 * Transform an array into a regexp.
+	 *
+	 * @param  {Array}  path
+	 * @param  {Array}  keys
+	 * @param  {Object} options
+	 * @return {RegExp}
+	 */
+	function arrayToRegexp (path, keys, options) {
+	  var parts = []
+	
+	  for (var i = 0; i < path.length; i++) {
+	    parts.push(pathToRegexp(path[i], keys, options).source)
+	  }
+	
+	  var regexp = new RegExp('(?:' + parts.join('|') + ')', flags(options))
+	
+	  return attachKeys(regexp, keys)
+	}
+	
+	/**
+	 * Create a path regexp from string input.
+	 *
+	 * @param  {String} path
+	 * @param  {Array}  keys
+	 * @param  {Object} options
+	 * @return {RegExp}
+	 */
+	function stringToRegexp (path, keys, options) {
+	  var tokens = parse(path)
+	  var re = tokensToRegExp(tokens, options)
+	
+	  // Attach keys back to the regexp.
+	  for (var i = 0; i < tokens.length; i++) {
+	    if (typeof tokens[i] !== 'string') {
+	      keys.push(tokens[i])
+	    }
+	  }
+	
+	  return attachKeys(re, keys)
+	}
+	
+	/**
+	 * Expose a function for taking tokens and returning a RegExp.
+	 *
+	 * @param  {Array}  tokens
+	 * @param  {Array}  keys
+	 * @param  {Object} options
+	 * @return {RegExp}
+	 */
+	function tokensToRegExp (tokens, options) {
+	  options = options || {}
+	
+	  var strict = options.strict
+	  var end = options.end !== false
+	  var route = ''
+	  var lastToken = tokens[tokens.length - 1]
+	  var endsWithSlash = typeof lastToken === 'string' && /\/$/.test(lastToken)
+	
+	  // Iterate over the tokens and create our regexp string.
+	  for (var i = 0; i < tokens.length; i++) {
+	    var token = tokens[i]
+	
+	    if (typeof token === 'string') {
+	      route += escapeString(token)
+	    } else {
+	      var prefix = escapeString(token.prefix)
+	      var capture = token.pattern
+	
+	      if (token.repeat) {
+	        capture += '(?:' + prefix + capture + ')*'
+	      }
+	
+	      if (token.optional) {
+	        if (prefix) {
+	          capture = '(?:' + prefix + '(' + capture + '))?'
+	        } else {
+	          capture = '(' + capture + ')?'
+	        }
+	      } else {
+	        capture = prefix + '(' + capture + ')'
+	      }
+	
+	      route += capture
+	    }
+	  }
+	
+	  // In non-strict mode we allow a slash at the end of match. If the path to
+	  // match already ends with a slash, we remove it for consistency. The slash
+	  // is valid at the end of a path match, not in the middle. This is important
+	  // in non-ending mode, where "/test/" shouldn't match "/test//route".
+	  if (!strict) {
+	    route = (endsWithSlash ? route.slice(0, -2) : route) + '(?:\\/(?=$))?'
+	  }
+	
+	  if (end) {
+	    route += '$'
+	  } else {
+	    // In non-ending mode, we need the capturing groups to match as much as
+	    // possible by using a positive lookahead to the end or next path segment.
+	    route += strict && endsWithSlash ? '' : '(?=\\/|$)'
+	  }
+	
+	  return new RegExp('^' + route, flags(options))
+	}
+	
+	/**
+	 * Normalize the given path string, returning a regular expression.
+	 *
+	 * An empty array can be passed in for the keys, which will hold the
+	 * placeholder key descriptions. For example, using `/user/:id`, `keys` will
+	 * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
+	 *
+	 * @param  {(String|RegExp|Array)} path
+	 * @param  {Array}                 [keys]
+	 * @param  {Object}                [options]
+	 * @return {RegExp}
+	 */
+	function pathToRegexp (path, keys, options) {
+	  keys = keys || []
+	
+	  if (!isarray(keys)) {
+	    options = keys
+	    keys = []
+	  } else if (!options) {
+	    options = {}
+	  }
+	
+	  if (path instanceof RegExp) {
+	    return regexpToRegexp(path, keys, options)
+	  }
+	
+	  if (isarray(path)) {
+	    return arrayToRegexp(path, keys, options)
+	  }
+	
+	  return stringToRegexp(path, keys, options)
+	}
+
+
+/***/ },
+/* 268 */
+/*!***********************************!*\
+  !*** ./~/page/~/isarray/index.js ***!
+  \***********************************/
+/***/ function(module, exports) {
+
+	module.exports = Array.isArray || function (arr) {
+	  return Object.prototype.toString.call(arr) == '[object Array]';
+	};
+
+
+/***/ },
+/* 269 */
 /*!**************************!*\
   !*** ./styles/main.styl ***!
   \**************************/
@@ -36892,10 +37899,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../~/css-loader!./../~/stylus-loader!./main.styl */ 333);
+	var content = __webpack_require__(/*! !./../~/css-loader!./../~/stylus-loader!./main.styl */ 270);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../~/style-loader/addStyles.js */ 335)(content, {});
+	var update = __webpack_require__(/*! ./../~/style-loader/addStyles.js */ 272)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -36912,24 +37919,24 @@
 	}
 
 /***/ },
-/* 333 */
+/* 270 */
 /*!***********************************************************!*\
   !*** ./~/css-loader!./~/stylus-loader!./styles/main.styl ***!
   \***********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../~/css-loader/lib/css-base.js */ 334)();
+	exports = module.exports = __webpack_require__(/*! ./../~/css-loader/lib/css-base.js */ 271)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "* {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-transition: all 0.1s linear;\n  -moz-transition: all 0.1s linear;\n  -o-transition: all 0.1s linear;\n  -ms-transition: all 0.1s linear;\n  transition: all 0.1s linear;\n}\nhtml,\nbody {\n  background-color: #fff;\n  margin: 0;\n  padding: 0;\n  overflow-x: hidden;\n  min-height: 100vh;\n}\nbody {\n  display: -webkit-box;\n  display: -moz-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -moz-box-orient: vertical;\n  -o-box-orient: vertical;\n  -webkit-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-lines: multiple;\n  -moz-box-lines: multiple;\n  -o-box-lines: multiple;\n  -webkit-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  position: relative;\n  height: auto;\n  -webkit-box-pack: center;\n  -moz-box-pack: center;\n  -o-box-pack: center;\n  -ms-flex-pack: center;\n  -webkit-justify-content: center;\n  justify-content: center;\n}\n.container {\n  border-radius: 2px;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: box;\n  display: flex;\n  -webkit-box-flex: 1;\n  -moz-box-flex: 1;\n  -o-box-flex: 1;\n  box-flex: 1;\n  -webkit-flex: 1;\n  -ms-flex: 1;\n  flex: 1;\n  -webkit-box-orient: vertical;\n  -moz-box-orient: vertical;\n  -o-box-orient: vertical;\n  -webkit-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-lines: multiple;\n  -moz-box-lines: multiple;\n  -o-box-lines: multiple;\n  -webkit-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -webkit-box-pack: start;\n  -moz-box-pack: start;\n  -o-box-pack: start;\n  -ms-flex-pack: start;\n  -webkit-justify-content: flex-start;\n  justify-content: flex-start;\n  margin: 0 auto;\n  max-width: 650px;\n  position: relative;\n  height: auto;\n  width: 90%;\n}\n.container.content {\n  margin-top: 100px;\n}\n.container:before,\n.container:after {\n  content: '';\n  display: table;\n}\n.ChargingContainer {\n  text-align: center;\n  margin: 0 auto;\n}\n.ChargingContainer-span,\n.ChargingContainer-img {\n  font-family: 'Dosis', Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  font-size: 25px;\n}\n.Menu {\n  background-color: #d24d57;\n  -webkit-box-shadow: 1px 1px 4px 4px #555;\n  box-shadow: 1px 1px 4px 4px #555;\n  color: #fff;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: box;\n  display: flex;\n  -webkit-box-align: center;\n  -moz-box-align: center;\n  -o-box-align: center;\n  -ms-flex-align: center;\n  -webkit-align-items: center;\n  align-items: center;\n  -webkit-box-pack: center;\n  -moz-box-pack: center;\n  -o-box-pack: center;\n  -ms-flex-pack: center;\n  -webkit-justify-content: center;\n  justify-content: center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  font-family: 'Roboto Condensed', Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  font-size: 16px;\n  height: 60px;\n  text-align: center;\n  width: 100%;\n  z-index: 90;\n}\n.Menu .container {\n  position: relative;\n}\n.Menu-icon {\n  position: absolute;\n  top: 30px;\n  right: 10px;\n  font-size: 30px;\n  height: 40px;\n  width: 40px;\n}\n.Menu-icon--lang {\n  position: absolute;\n  top: 30px;\n  left: 10px;\n  cursor: pointer;\n}\n.Menu-icon--lang:active ~ .u-dropdown {\n  display: block;\n  opacity: 1;\n  -ms-filter: none;\n  filter: none;\n}\n.Movies {\n  display: -webkit-box;\n  display: -moz-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: box;\n  display: flex;\n  -webkit-box-lines: multiple;\n  -moz-box-lines: multiple;\n  -o-box-lines: multiple;\n  -webkit-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  list-style: none;\n  margin: 0 auto;\n  padding: 0;\n  padding-top: 280px;\n  position: relative;\n}\n.Movie {\n  position: relative;\n  margin: 10px 12px;\n  width: calc(50% - 24px);\n  width: -webkit-calc(50% - 24px);\n  width: -moz-calc(50% - 24px);\n  -webkit-transition: all 0.3s linear;\n  -moz-transition: all 0.3s linear;\n  -o-transition: all 0.3s linear;\n  -ms-transition: all 0.3s linear;\n  transition: all 0.3s linear;\n}\n.Movie:only-child {\n  margin: 0;\n  width: calc(80% - 24px);\n  width: -webkit-calc(80% - 24px);\n  width: -moz-calc(80% - 24px);\n  max-width: 100%;\n}\n.Movie:only-child .Movie-avatar img {\n  position: relative !important;\n}\n.Movie .Movie-avatar {\n  margin: 0;\n  padding: 0;\n  width: 100%;\n}\n.Movie .Movie-avatar img {\n  border-radius: 2px;\n  position: initial;\n  top: 0;\n  left: 0;\n  width: 100%;\n  z-index: 1;\n}\n.Movie .Movie-avatar img:hover {\n  position: absolute;\n  top: -15px;\n  left: -15px;\n  width: 120%;\n  z-index: 2;\n}\n.SearchForm {\n  position: absolute;\n  font-family: 'Open Sans', Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  font-size: 14px;\n  font-weight: 700;\n  margin: 0 auto;\n  top: 90px;\n  left: 10px;\n  right: 10px;\n  width: 90%;\n}\n.SearchForm--charging {\n  position: relative;\n  -webkit-box-ordinal-group: -1;\n  -moz-box-ordinal-group: -1;\n  -o-box-ordinal-group: -1;\n  -ms-flex-order: -1;\n  -webkit-order: -1;\n  order: -1;\n  margin-bottom: 100px;\n}\n.SearchForm label {\n  font-size: 12px;\n  color: #979995;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n}\n.SearchForm input {\n  border: 1px solid #ccc;\n  border-radius: 2px;\n  color: #444;\n  height: 38px;\n  font-family: 'Open Sans', Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  font-weight: bold;\n  line-height: 1.4;\n  padding: 6px 14px;\n  width: 100%;\n}\n.SearchBox {\n  background: #22a7f0;\n  border-radius: 2px;\n  color: #fff;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: box;\n  display: flex;\n  -webkit-box-align: center;\n  -moz-box-align: center;\n  -o-box-align: center;\n  -ms-flex-align: center;\n  -webkit-align-items: center;\n  align-items: center;\n  font-family: 'Open Sans';\n  font-size: 20px;\n  height: 70px;\n  left: 10%;\n  padding: 0 10px;\n  position: absolute;\n  top: 180px;\n  width: 80%;\n}\n.searchWord {\n  font-family: 'Dosis', Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  text-decoration: underline;\n  padding-left: 5px;\n}\n.u-dropdown {\n  position: absolute;\n  top: 2px;\n  left: 10px;\n  color: #fff;\n  font-weight: bold;\n}\n.u-dropdown .Dropdown {\n  background-color: #ec644b;\n  height: 60px;\n  position: relative;\n  padding: 0;\n  list-style: none;\n}\n.u-dropdown .Dropdown li {\n  cursor: pointer;\n  text-align: center;\n  height: 50%;\n  padding: 7px 10px;\n  width: 100%;\n  vertical-align: middle;\n}\n.u-dropdown .Dropdown li:hover {\n  background-color: #fff;\n  color: #ec644b;\n}\n.u-movieModal {\n  display: none;\n}\n.u-movieModal.hidden {\n  display: none;\n  opacity: 0;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n  filter: alpha(opacity=0);\n}\n.u-movieModal.view {\n  background-color: rgba(204,204,204,0.6);\n  display: block;\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  width: 100%;\n  opacity: 1;\n  -ms-filter: none;\n  filter: none;\n  z-index: 100;\n}\n.u-movieModal.view .container {\n  background-color: #fff;\n  position: relative !important;\n  min-height: 100vh;\n}\n.Movie-body {\n  overflow-y: scroll;\n}\n.Movie-img {\n  min-height: 300px;\n  max-height: 300px;\n  margin: 0 auto;\n  min-width: 100%;\n  width: auto;\n}\n@media screen and (min-width: 425px) and (max-width: 767px) {\n  .Movie {\n    margin: 10px auto;\n    margin-left: 9%;\n    max-width: 170px;\n    width: 40%;\n  }\n  .Movie:only-child {\n    max-width: 100%;\n    padding: 0;\n  }\n  .Movie:nth-child(2n+2) {\n    margin-left: auto;\n    margin-right: 9%;\n  }\n}\n@media screen and (min-width: 624px) and (max-width: 767px) {\n  .Movie {\n    margin-left: 12%;\n  }\n  .Movie:only-child {\n    max-width: 100%;\n    padding: 0;\n  }\n  .Movie:nth-child(2n-2) {\n    margin-right: 12%;\n  }\n}\n@media screen and (min-width: 768px) and (max-width: 1023px) {\n  .Movie {\n    margin: 10px auto;\n    width: 30%;\n    max-width: 150px;\n  }\n  .Movie:only-child {\n    max-width: 100%;\n    padding: 0;\n  }\n  .Movie:nth-child(3n+1) {\n    margin-left: 5%;\n  }\n  .Movie:nth-child(3n+2) {\n    margin: 10px 0;\n  }\n  .Movie:nth-child(3n+3) {\n    margin-right: 5%;\n  }\n}\n@media screen and (min-width: 1024px) {\n  .container {\n    max-width: 900px;\n  }\n  .Movie {\n    margin: 15px auto;\n    max-width: 150px;\n    width: 20%;\n  }\n  .Movie:only-child {\n    max-width: 100%;\n    padding: 0;\n  }\n  .Movie:nth-child(4n+1) {\n    margin-left: 10%;\n  }\n  .Movie:nth-child(4n+4) {\n    margin-right: 10%;\n  }\n  .Movie:last-child:not(:nth-child(4n+4)) {\n    margin-right: 10%;\n  }\n}\n", ""]);
+	exports.push([module.id, "* {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-transition: all 0.1s linear;\n  -moz-transition: all 0.1s linear;\n  -o-transition: all 0.1s linear;\n  -ms-transition: all 0.1s linear;\n  transition: all 0.1s linear;\n}\n::selection {\n  background-color: #ec644b;\n  font-weight: bold;\n  color: #fff;\n}\n::-webkit-scrollbar {\n  width: 13px;\n  background: #536363;\n  padding: 10px 0;\n}\n::-webkit-scrollbar-thumb {\n  background: #747474;\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);\n  min-height: 50px;\n}\n::-webkit-scrollbar-track {\n  background: #2c2c2c;\n  border-radius: 10px;\n  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);\n}\n::-webkit-scrollbar-button {\n  height: 4px;\n  background-color: transparent;\n}\nhtml,\nbody {\n  background-color: #fff;\n  margin: 0;\n  padding: 0;\n  overflow-x: hidden;\n  min-height: 100vh;\n}\nbody {\n  display: -webkit-box;\n  display: -moz-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: box;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -moz-box-orient: vertical;\n  -o-box-orient: vertical;\n  -webkit-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-lines: multiple;\n  -moz-box-lines: multiple;\n  -o-box-lines: multiple;\n  -webkit-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  position: relative;\n  height: auto;\n  -webkit-box-pack: center;\n  -moz-box-pack: center;\n  -o-box-pack: center;\n  -ms-flex-pack: center;\n  -webkit-justify-content: center;\n  justify-content: center;\n}\n.container {\n  border-radius: 2px;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: box;\n  display: flex;\n  -webkit-box-flex: 1;\n  -moz-box-flex: 1;\n  -o-box-flex: 1;\n  box-flex: 1;\n  -webkit-flex: 1;\n  -ms-flex: 1;\n  flex: 1;\n  -webkit-box-orient: vertical;\n  -moz-box-orient: vertical;\n  -o-box-orient: vertical;\n  -webkit-flex-direction: column;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-lines: multiple;\n  -moz-box-lines: multiple;\n  -o-box-lines: multiple;\n  -webkit-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -webkit-box-pack: start;\n  -moz-box-pack: start;\n  -o-box-pack: start;\n  -ms-flex-pack: start;\n  -webkit-justify-content: flex-start;\n  justify-content: flex-start;\n  margin: 0 auto;\n  max-width: 650px;\n  position: relative;\n  height: auto;\n  width: 90%;\n}\n.container.content {\n  margin-top: 100px;\n}\n.container:before,\n.container:after {\n  content: '';\n  display: table;\n}\n.ChargingContainer {\n  text-align: center;\n  margin: 0 auto;\n}\n.ChargingContainer-span,\n.ChargingContainer-img {\n  font-family: 'Dosis', Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  font-size: 25px;\n}\n.Menu {\n  background-color: #d24d57;\n  -webkit-box-shadow: 1px 1px 4px 4px #555;\n  box-shadow: 1px 1px 4px 4px #555;\n  color: #fff;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: box;\n  display: flex;\n  -webkit-box-align: center;\n  -moz-box-align: center;\n  -o-box-align: center;\n  -ms-flex-align: center;\n  -webkit-align-items: center;\n  align-items: center;\n  -webkit-box-pack: center;\n  -moz-box-pack: center;\n  -o-box-pack: center;\n  -ms-flex-pack: center;\n  -webkit-justify-content: center;\n  justify-content: center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  font-family: 'Roboto Condensed', Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  font-size: 16px;\n  height: 60px;\n  text-align: center;\n  width: 100%;\n  z-index: 90;\n}\n.Menu .container {\n  position: relative;\n}\n.Menu-logo {\n  color: #fff;\n  text-decoration: none;\n}\n.Menu-icon {\n  position: absolute;\n  top: 30px;\n  right: 10px;\n  font-size: 30px;\n  height: 40px;\n  width: 40px;\n}\n.Menu-icon--lang {\n  position: absolute;\n  top: 30px;\n  left: 10px;\n  cursor: pointer;\n}\n.Menu-icon--lang:active ~ .u-dropdown {\n  display: block;\n  opacity: 1;\n  -ms-filter: none;\n  filter: none;\n}\n.Movies {\n  display: -webkit-box;\n  display: -moz-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: box;\n  display: flex;\n  -webkit-box-lines: multiple;\n  -moz-box-lines: multiple;\n  -o-box-lines: multiple;\n  -webkit-flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n  list-style: none;\n  margin: 0 auto;\n  padding: 0;\n  padding-top: 280px;\n  position: relative;\n}\n.Movie {\n  position: relative;\n  margin: 10px 12px;\n  width: calc(50% - 24px);\n  width: -webkit-calc(50% - 24px);\n  width: -moz-calc(50% - 24px);\n  -webkit-transition: all 0.3s linear;\n  -moz-transition: all 0.3s linear;\n  -o-transition: all 0.3s linear;\n  -ms-transition: all 0.3s linear;\n  transition: all 0.3s linear;\n}\n.Movie:only-child {\n  margin: 0;\n  width: calc(80% - 24px);\n  width: -webkit-calc(80% - 24px);\n  width: -moz-calc(80% - 24px);\n  max-width: 100%;\n}\n.Movie:last-child .Movie-avatar img {\n  position: relative !important;\n}\n.Movie:nth-last-child(2):first-child:hover .Movie-avatar img {\n  position: relative !important;\n}\n.Movie .Movie-avatar {\n  margin: 0;\n  padding: 0;\n  width: 100%;\n}\n.Movie .Movie-avatar img {\n  border-radius: 2px;\n  position: initial;\n  top: 0;\n  left: 0;\n  width: 100%;\n  z-index: 1;\n}\n.Movie .Movie-avatar img:hover {\n  position: absolute;\n  top: -15px;\n  left: -15px;\n  width: 120%;\n  z-index: 2;\n}\n.SearchForm {\n  position: absolute;\n  font-family: 'Open Sans', Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  font-size: 14px;\n  font-weight: 700;\n  margin: 0 auto;\n  top: 90px;\n  left: 10px;\n  right: 10px;\n  width: 90%;\n}\n.SearchForm--charging {\n  position: relative;\n  -webkit-box-ordinal-group: -1;\n  -moz-box-ordinal-group: -1;\n  -o-box-ordinal-group: -1;\n  -ms-flex-order: -1;\n  -webkit-order: -1;\n  order: -1;\n  margin-bottom: 100px;\n}\n.SearchForm label {\n  font-size: 12px;\n  color: #979995;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n}\n.SearchForm input {\n  border: 1px solid #ccc;\n  border-radius: 2px;\n  color: #444;\n  height: 38px;\n  font-family: 'Open Sans', Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  font-weight: bold;\n  line-height: 1.4;\n  padding: 6px 14px;\n  width: 100%;\n}\n.SearchBox {\n  background: #22a7f0;\n  border-radius: 2px;\n  color: #fff;\n  display: -webkit-box;\n  display: -moz-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: box;\n  display: flex;\n  -webkit-box-align: center;\n  -moz-box-align: center;\n  -o-box-align: center;\n  -ms-flex-align: center;\n  -webkit-align-items: center;\n  align-items: center;\n  font-family: 'Open Sans';\n  font-size: 20px;\n  height: 70px;\n  left: 10%;\n  padding: 0 10px;\n  position: absolute;\n  top: 180px;\n  width: 80%;\n}\n.searchWord {\n  font-family: 'Dosis', Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  text-decoration: underline;\n  padding-left: 5px;\n}\n.u-dropdown {\n  position: absolute;\n  top: 2px;\n  left: 10px;\n  color: #fff;\n  font-weight: bold;\n}\n.u-dropdown .Dropdown {\n  background-color: #ec644b;\n  height: 60px;\n  position: relative;\n  padding: 0;\n  list-style: none;\n}\n.u-dropdown .Dropdown li {\n  cursor: pointer;\n  text-align: center;\n  height: 50%;\n  padding: 7px 10px;\n  width: 100%;\n  vertical-align: middle;\n}\n.u-dropdown .Dropdown li:hover {\n  background-color: #fff;\n  color: #ec644b;\n}\n.modal {\n  background-color: #fafafa;\n  border-radius: 2px;\n  bottom: 10%;\n  display: none;\n  left: 0;\n  margin: auto;\n  max-height: 70%;\n  overflow-y: auto;\n  padding: 0;\n  position: fixed;\n  top: 10%;\n  right: 0;\n  width: 55%;\n  will-change: top, opacity;\n}\n.modal.modal-fixed-footer {\n  padding: 0;\n  height: 70%;\n}\n.modal.modal-fixed-footer .modal-content {\n  position: absolute;\n  height: calc(100% - 56px);\n  max-height: 100%;\n  width: 100%;\n  overflow-y: auto;\n}\n.modal.modal-fixed-footer .modal-footer {\n  border-top: 1px solid rgba(0,0,0,0.1);\n  position: absolute;\n  bottom: 0;\n}\n.modal.modal-fixed-footer .modal-content {\n  position: absolute;\n  height: calc(100% - 56px);\n  max-height: 100%;\n  width: 100%;\n  overflow-y: auto;\n}\n.modal.modal-fixed-footer .modal-footer {\n  border-top: 1px solid rgba(0,0,0,0.1);\n  position: absolute;\n  bottom: 0;\n}\n.modal.bottom-sheet {\n  top: auto;\n  bottom: -100%;\n  margin: 0;\n  width: 100%;\n  max-height: 45%;\n  border-radius: 0;\n  will-change: bottom, opacity;\n}\n.modal h1,\n.modal h2,\n.modal h3,\n.modal h4 {\n  margin-top: 0;\n}\n.modal .modal-content {\n  background-position: center;\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  background-size: cover;\n  background-repeat: no-repeat;\n  padding: 24px;\n}\n.modal .modal-content .modal-cont {\n  background: rgba(255,255,255,0.8);\n  padding: 5px;\n}\n.modal .modal-content .modal-cont h2 {\n  font-family: 'Dosis';\n}\n.modal .modal-content .modal-cont p {\n  font-family: 'Open Sans';\n}\n.modal .modal-close {\n  cursor: pointer;\n}\n.modal .modal-footer {\n  background-color: #fafafa;\n  border-radius: 0 0 2px 2px;\n  padding: 4px 6px;\n  height: 56px;\n  width: 100%;\n}\n.modal .modal-footer .btn,\n.modal .modal-footer .btn-large,\n.modal .modal-footer .btn-flat {\n  background-color: #f00;\n  border-radius: 8px;\n  color: #fff;\n  float: right;\n  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n  font-weight: bold;\n  height: 30px;\n  margin: 8px;\n  padding: 5px 25px;\n  text-align: center;\n  text-decoration: none;\n  width: 150px;\n}\n.lean-overlay {\n  position: fixed;\n  z-index: 999;\n  top: -100px;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  height: 125%;\n  width: 100%;\n  background: #000;\n  display: none;\n  will-change: opacity;\n}\n.Movie-body {\n  overflow-y: scroll;\n}\n.Movie-img {\n  min-height: 300px;\n  max-height: 300px;\n  margin: 0 auto;\n  min-width: 100%;\n  width: auto;\n}\n@media screen and (max-width: 500px) {\n  .modal {\n    width: 70%;\n  }\n}\n@media screen and (min-width: 425px) and (max-width: 767px) {\n  .Movie {\n    margin: 10px auto;\n    margin-left: 9%;\n    max-width: 170px;\n    width: 40%;\n  }\n  .Movie:only-child {\n    max-width: 100%;\n    padding: 0;\n  }\n  .Movie:nth-child(2n+2) {\n    margin-left: auto;\n    margin-right: 9%;\n  }\n}\n@media screen and (min-width: 624px) and (max-width: 767px) {\n  .Movie {\n    margin-left: 12%;\n  }\n  .Movie:only-child {\n    max-width: 100%;\n    padding: 0;\n  }\n  .Movie:nth-child(2n-2) {\n    margin-right: 12%;\n  }\n  .Movie:nth-last-child(2) {\n    margin: auto !important;\n  }\n}\n@media screen and (min-width: 768px) and (max-width: 1023px) {\n  .Movie {\n    margin: 10px auto;\n    width: 30%;\n    max-width: 150px;\n  }\n  .Movie:only-child {\n    max-width: 100%;\n    padding: 0;\n  }\n  .Movie:nth-last-child(2):first-child {\n    max-width: 40%;\n    width: auto;\n    padding: 0;\n  }\n  .Movie:nth-child(3n+1) {\n    margin-left: 5%;\n  }\n  .Movie:nth-child(3n+2) {\n    margin: 10px 0;\n  }\n  .Movie:nth-child(3n+3) {\n    margin-right: 5%;\n  }\n}\n@media screen and (min-width: 1024px) {\n  .modal {\n    width: 80%;\n  }\n  .container {\n    max-width: 900px;\n  }\n  .Movie {\n    margin: 15px auto;\n    max-width: 150px;\n    width: 20%;\n  }\n  .Movie:only-child {\n    max-width: 100%;\n    padding: 0;\n  }\n  .Movie:nth-child(4n+1) {\n    margin-left: 10%;\n  }\n  .Movie:nth-child(4n+4) {\n    margin-right: 10%;\n  }\n  .Movie:last-child:not(:nth-child(4n+4)) {\n    margin-right: 10%;\n  }\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 334 */
+/* 271 */
 /*!**************************************!*\
   !*** ./~/css-loader/lib/css-base.js ***!
   \**************************************/
@@ -36988,7 +37995,7 @@
 
 
 /***/ },
-/* 335 */
+/* 272 */
 /*!*************************************!*\
   !*** ./~/style-loader/addStyles.js ***!
   \*************************************/

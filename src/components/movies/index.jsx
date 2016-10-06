@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieList from './movie-list/index.jsx';
-import SearchInput from './search-input/index.jsx';
+import page from 'page';
 
 const translate = require('../translate');
 
@@ -18,9 +18,25 @@ class Movies extends React.Component {
   componentWillMount() {
     this.fetchMovies()
   }
+  componentDidMount() {
+    $(document).ready(function(){
+      $('.modal-trigger').leanModal();
+      page('/', function (ctx, res) {
+        $('#modal').closeModal()
+      })
+      page('/movies/:id', function (ctx, res) {
+        $(`#modal${ctx.params.id}`).openModal({
+          complete: function() {
+            page('/')
+          }
+        })
+      })
+      page()
+    });
+  }
   handleChangeInForm(e) {
     // this.searchMovies(this.refs)
-    console.log(this.refs)
+    // console.log(this.refs)
     return false
   }
   handleChange(e) {
@@ -41,11 +57,11 @@ class Movies extends React.Component {
       api = `${this.state.url}${this.state.search}`
     } else { api = this.state.full }
 
-    console.log(
-      `Api: ${api} \n
-      Url: ${this.state.url} \n
-      Search state word is: ${this.state.search == ' ' ? 'space' : this.state.search }`
-    );
+    // console.log(
+    //   `Api: ${api} \n
+    //   Url: ${this.state.url} \n
+    //   Search state word is: ${this.state.search == ' ' ? 'space' : this.state.search }`
+    // );
 
     fetch(api)
       .then((res) => {
@@ -67,7 +83,7 @@ class Movies extends React.Component {
           <div className="ChargingContainer" id="chargingContainer">
             <p className="ChargingContainer-span">{translate.message('charging')}</p>
             <figure className="ChargingContainer-img">
-              <img src="img/load2.gif" alt="Charging films" />
+              <img src="\img\load2.gif" alt="Charging films" />
             </figure>
           </div>
           { setTimeout(function chargeContainer() {

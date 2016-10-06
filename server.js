@@ -21,9 +21,9 @@ app.get('/', (req, res) => {
   })
 })
 
-app.get('/full', (req, res) => {
+app.get('/movies/:id', (req, res) => {
   res.render('home', {
-    title: 'Full',
+    title: req.params.id,
   })
 })
 
