@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieList from './movie-list/index.jsx';
 import page from 'page';
+import 'whatwg-fetch';
 
 const translate = require('../translate');
 
