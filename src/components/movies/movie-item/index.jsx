@@ -7,7 +7,7 @@ import MovieImage from './movie-image.jsx';
 function MovieItem({ movie }) {
   const pic = movie.image
     ? JSON.stringify(movie.image.medium).split('"').join('')
-    : 'https://thebislondon.files.wordpress.com/2015/09/excuse-me-im-sorry.jpg?w=764';
+    : 'http://tvmazecdn.com/images/no-img/no-img-portrait-text.png';
   const styles = {
     backgroundImage: 'url(' + pic + ')',
   }
